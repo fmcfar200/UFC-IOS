@@ -1,0 +1,6 @@
+framework module Pods_fndb_ios {
+  umbrella header "Pods-fndb-ios-umbrella.h"
+
+  export *
+  module * { export * }
+}
