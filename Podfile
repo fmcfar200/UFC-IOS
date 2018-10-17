@@ -2,7 +2,8 @@
 # platform :ios, '9.0'
 
 target 'fndb-ios' do
-  pod 'Firebase/Core'
+  pod 'Firebase'
+  pod 'Firebase/Database'
 
   use_frameworks!
 

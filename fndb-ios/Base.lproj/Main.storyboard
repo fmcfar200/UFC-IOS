@@ -37,8 +37,8 @@
                                         <fontDescription key="fontDescription" name="LuckiestGuy-Regular" family="Luckiest Guy" pointSize="25"/>
                                         <state key="normal" title="Skins"/>
                                         <connections>
-                                            <action selector="skinButtonTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NAD-m8-teN"/>
-                                            <segue destination="TQM-L3-CjU" kind="show" id="iPb-i0-WXF"/>
+                                            <action selector="skinButtonTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bo9-0S-y3G"/>
+                                            <segue destination="TQM-L3-CjU" kind="show" id="xaU-E4-YuQ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nuv-mr-RkQ">

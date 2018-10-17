@@ -7,13 +7,27 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
 class SkinViewController: UIViewController {
-
+    
+    let bPSkinRef = Database.database().reference().child("SPSkin")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
+        bPSkinRef.observeSingleEvent(of: .value, with: { (snapshot) in
+            // Get user value
+            debugPrint(snapshot.value)
+            
+            // ...
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+        
+        
     }
     
 

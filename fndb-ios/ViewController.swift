@@ -24,5 +24,7 @@ class ViewController: UIViewController {
     
     }
     
+    @IBAction func skinButtonTouch(_ sender: Any) {
+    }
 }
 
