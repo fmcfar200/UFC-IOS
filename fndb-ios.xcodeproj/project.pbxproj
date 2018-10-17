@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C363C172177981D00E9A27F /* SkinSelectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C363C162177981D00E9A27F /* SkinSelectController.swift */; };
+		4C363C19217798BF00E9A27F /* SkinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C363C18217798BF00E9A27F /* SkinViewController.swift */; };
 		4C9AC1F92176F65B00C9D03C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9AC1F82176F65B00C9D03C /* AppDelegate.swift */; };
 		4C9AC1FB2176F65B00C9D03C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9AC1FA2176F65B00C9D03C /* ViewController.swift */; };
 		4C9AC1FE2176F65B00C9D03C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C9AC1FC2176F65B00C9D03C /* Main.storyboard */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C363C162177981D00E9A27F /* SkinSelectController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinSelectController.swift; sourceTree = "<group>"; };
+		4C363C18217798BF00E9A27F /* SkinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinViewController.swift; sourceTree = "<group>"; };
 		4C9AC1F52176F65B00C9D03C /* fndb-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "fndb-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C9AC1F82176F65B00C9D03C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C9AC1FA2176F65B00C9D03C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +63,8 @@
 				4C9AC20E2176FE4000C9D03C /* LuckiestGuy.ttf */,
 				4C9AC1F82176F65B00C9D03C /* AppDelegate.swift */,
 				4C9AC1FA2176F65B00C9D03C /* ViewController.swift */,
+				4C363C162177981D00E9A27F /* SkinSelectController.swift */,
+				4C363C18217798BF00E9A27F /* SkinViewController.swift */,
 				4C9AC1FC2176F65B00C9D03C /* Main.storyboard */,
 				4C9AC1FF2176F65D00C9D03C /* Assets.xcassets */,
 				4C9AC2012176F65D00C9D03C /* LaunchScreen.storyboard */,
@@ -140,7 +146,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C9AC1FB2176F65B00C9D03C /* ViewController.swift in Sources */,
+				4C363C172177981D00E9A27F /* SkinSelectController.swift in Sources */,
 				4C9AC1F92176F65B00C9D03C /* AppDelegate.swift in Sources */,
+				4C363C19217798BF00E9A27F /* SkinViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
