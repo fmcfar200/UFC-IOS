@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		25C58B7E2996069EE7EA3EAA /* Pods_fndb_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 069471A5F36AD2A55ECB688B /* Pods_fndb_ios.framework */; };
 		4C363C172177981D00E9A27F /* SkinSelectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C363C162177981D00E9A27F /* SkinSelectController.swift */; };
-		4C363C19217798BF00E9A27F /* SkinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C363C18217798BF00E9A27F /* SkinViewController.swift */; };
 		4C9AC1F92176F65B00C9D03C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9AC1F82176F65B00C9D03C /* AppDelegate.swift */; };
 		4C9AC1FB2176F65B00C9D03C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9AC1FA2176F65B00C9D03C /* ViewController.swift */; };
 		4C9AC1FE2176F65B00C9D03C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C9AC1FC2176F65B00C9D03C /* Main.storyboard */; };
@@ -18,12 +17,13 @@
 		4C9AC20F2176FE4000C9D03C /* LuckiestGuy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4C9AC20E2176FE4000C9D03C /* LuckiestGuy.ttf */; };
 		4CA70D332177CBC00044C4F3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4CA70D322177CBC00044C4F3 /* GoogleService-Info.plist */; };
 		4CEC5B6F21787EDC00B74866 /* Skin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEC5B6E21787EDC00B74866 /* Skin.swift */; };
+		4CEC5B712178978100B74866 /* SkinTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEC5B702178978100B74866 /* SkinTableViewCell.swift */; };
+		4CEC5B732178A5B200B74866 /* SkinTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEC5B722178A5B200B74866 /* SkinTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		069471A5F36AD2A55ECB688B /* Pods_fndb_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fndb_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C363C162177981D00E9A27F /* SkinSelectController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinSelectController.swift; sourceTree = "<group>"; };
-		4C363C18217798BF00E9A27F /* SkinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinViewController.swift; sourceTree = "<group>"; };
 		4C9AC1F52176F65B00C9D03C /* fndb-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "fndb-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C9AC1F82176F65B00C9D03C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C9AC1FA2176F65B00C9D03C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -34,6 +34,8 @@
 		4C9AC20E2176FE4000C9D03C /* LuckiestGuy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = LuckiestGuy.ttf; path = "../../../Downloads/luckiest-guy/LuckiestGuy.ttf"; sourceTree = "<group>"; };
 		4CA70D322177CBC00044C4F3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		4CEC5B6E21787EDC00B74866 /* Skin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skin.swift; sourceTree = "<group>"; };
+		4CEC5B702178978100B74866 /* SkinTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinTableViewCell.swift; sourceTree = "<group>"; };
+		4CEC5B722178A5B200B74866 /* SkinTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinTableViewController.swift; sourceTree = "<group>"; };
 		8CB15914473BCCC4D09E974C /* Pods-fndb-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fndb-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-fndb-ios/Pods-fndb-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		8DB6DAFA9540923C8BF4DA08 /* Pods-fndb-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fndb-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-fndb-ios/Pods-fndb-ios.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -71,17 +73,18 @@
 		4C9AC1F72176F65B00C9D03C /* fndb-ios */ = {
 			isa = PBXGroup;
 			children = (
-				4C9AC20E2176FE4000C9D03C /* LuckiestGuy.ttf */,
+				4C9AC1FF2176F65D00C9D03C /* Assets.xcassets */,
+				4C9AC2012176F65D00C9D03C /* LaunchScreen.storyboard */,
+				4C9AC1FC2176F65B00C9D03C /* Main.storyboard */,
 				4C9AC1F82176F65B00C9D03C /* AppDelegate.swift */,
 				4C9AC1FA2176F65B00C9D03C /* ViewController.swift */,
 				4C363C162177981D00E9A27F /* SkinSelectController.swift */,
-				4C363C18217798BF00E9A27F /* SkinViewController.swift */,
-				4C9AC1FC2176F65B00C9D03C /* Main.storyboard */,
-				4C9AC1FF2176F65D00C9D03C /* Assets.xcassets */,
-				4C9AC2012176F65D00C9D03C /* LaunchScreen.storyboard */,
+				4CEC5B722178A5B200B74866 /* SkinTableViewController.swift */,
+				4CEC5B6E21787EDC00B74866 /* Skin.swift */,
+				4CEC5B702178978100B74866 /* SkinTableViewCell.swift */,
 				4C9AC2042176F65D00C9D03C /* Info.plist */,
 				4CA70D322177CBC00044C4F3 /* GoogleService-Info.plist */,
-				4CEC5B6E21787EDC00B74866 /* Skin.swift */,
+				4C9AC20E2176FE4000C9D03C /* LuckiestGuy.ttf */,
 			);
 			path = "fndb-ios";
 			sourceTree = "<group>";
@@ -231,8 +234,9 @@
 			files = (
 				4C9AC1FB2176F65B00C9D03C /* ViewController.swift in Sources */,
 				4C363C172177981D00E9A27F /* SkinSelectController.swift in Sources */,
+				4CEC5B712178978100B74866 /* SkinTableViewCell.swift in Sources */,
+				4CEC5B732178A5B200B74866 /* SkinTableViewController.swift in Sources */,
 				4C9AC1F92176F65B00C9D03C /* AppDelegate.swift in Sources */,
-				4C363C19217798BF00E9A27F /* SkinViewController.swift in Sources */,
 				4CEC5B6F21787EDC00B74866 /* Skin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
