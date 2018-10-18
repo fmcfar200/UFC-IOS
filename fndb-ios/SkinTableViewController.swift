@@ -10,20 +10,39 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 
-class SkinTableViewController: UITableViewController {
+class SkinTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    
+    @IBOutlet weak var tableView: UITableView!
     
     var skinCollection = [Skin]()
+    
+    var searchType = SearchType.EPIC
+    var seasonNo = Int()
+    
     let bPSkinRef = Database.database().reference().child("SPSkin")
+    let iSSkinRef = Database.database().reference().child("ISSkin")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.delegate = self;
-        tableView.dataSource = self;
+        print(seasonNo, searchType)
         
-        var s1Skin = bPSkinRef.child("SP_S1_Skins")
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        var dataRef = DatabaseReference()
+        if (searchType == SearchType.BP)
+        {
+            dataRef = bPSkinRef.child("SP_S" + String(seasonNo) + "_Skins")
+        }
+        else
+        {
+            dataRef = iSSkinRef.child(searchType.rawValue + "_Skins")
+        }
+        
         // Do any additional setup after loading the view.
-        s1Skin.observe(.value, with: { (snapshot) in
+        dataRef.observe(.value, with: { (snapshot) in
             var theCollection = [Skin]()
             for item in snapshot.children.allObjects as! [DataSnapshot]
             {
@@ -40,8 +59,7 @@ class SkinTableViewController: UITableViewController {
             
             self.skinCollection = theCollection
             self.tableView.reloadData()
-
-            debugPrint(self.skinCollection[0].name, " ", self.skinCollection[1].name)
+            
             
         }) { (error) in
             print(error.localizedDescription)
@@ -58,18 +76,14 @@ class SkinTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return skinCollection.count
     }
 
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "SkinTableViewCell"
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier , for: indexPath) as? SkinTableViewCell else{
          
@@ -79,11 +93,23 @@ class SkinTableViewController: UITableViewController {
 
         // Configure the cell...
         let skin = self.skinCollection[indexPath.row]
-        cell.nameLabel.text = skin.name
-        cell.rarityLabel.text = skin.rarity
+        cell.cellName.text = skin.name
         
         let imageURL = URL(string: skin.imageLinkSmall as! String)
         downloadImage(urlstr: skin.imageLinkSmall as! String, imageView: cell.cellImage)
+        
+        if (searchType == SearchType.BP)
+        {
+            cell.cellCost.text = ""
+            let image = UIImage(named: "Battle_Pass_icon")
+            cell.bucksImage.image = image
+        }
+        else{
+            cell.cellCost.text = skin.cost
+            let image = UIImage(named: "Icon_VBucks")
+            cell.bucksImage.image = image
+        }
+        
         cell.layoutSubviews()
         return cell
     }

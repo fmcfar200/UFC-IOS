@@ -17,6 +17,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var challengesButton: UIView!
     @IBOutlet weak var newsButton: UIView!
     
+    var searchType = SearchType.PROMO
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -26,5 +28,25 @@ class ViewController: UIViewController {
     
     @IBAction func skinButtonTouch(_ sender: Any) {
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "segue" else {return}
+        let skinController = segue.destination as! SkinTableViewController
+        skinController.searchType = searchType
+        skinController.seasonNo = 0
+    }
+    
+    @IBAction func toSkinPress(_ sender: UIButton) {
+        
+        switch sender.tag {
+        case 0:
+            searchType = SearchType.PROMO
+        case 1:
+            searchType = SearchType.SEASONAL
+        default:
+            searchType = SearchType.PROMO
+        }
+    }
+    
 }
 
