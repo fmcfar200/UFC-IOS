@@ -15,6 +15,10 @@ class Skin
     var cost:String?
     var imageLinkSmall:String?
     
+    init() {
+        
+    }
+    
     init(id:String, name:String, rarity:String, desc:String, imageLinkSmall:String)
     {
         self.id = id

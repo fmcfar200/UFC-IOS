@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     
     var searchType = SearchType.PROMO
     
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -30,23 +31,33 @@ class ViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard segue.identifier == "segue" else {return}
-        let skinController = segue.destination as! SkinTableViewController
-        skinController.searchType = searchType
-        skinController.seasonNo = 0
+        
+        if(segue.identifier == "segueHome")
+        {
+            let skinController = segue.destination as! SkinTableViewController
+            theSearchType = self.searchType
+            skinController.seasonNo = 0
+        }
+        
     }
     
     @IBAction func toSkinPress(_ sender: UIButton) {
-        
-        switch sender.tag {
-        case 0:
+        let tag = sender.tag
+        switch tag {
+        case 2:
             searchType = SearchType.PROMO
-        case 1:
+
+        case 3:
             searchType = SearchType.SEASONAL
+
         default:
-            searchType = SearchType.PROMO
+            searchType = SearchType.BP
         }
+        performSegue(withIdentifier: "segueHome", sender: self)
+
+        
     }
+    
     
 }
 

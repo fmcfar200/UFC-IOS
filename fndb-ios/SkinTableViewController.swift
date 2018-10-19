@@ -10,6 +10,10 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 
+var theSearchType = SearchType.EPIC
+var selectedSkin = Skin()
+
+
 class SkinTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
@@ -17,7 +21,6 @@ class SkinTableViewController: UIViewController, UITableViewDelegate, UITableVie
     
     var skinCollection = [Skin]()
     
-    var searchType = SearchType.EPIC
     var seasonNo = Int()
     
     let bPSkinRef = Database.database().reference().child("SPSkin")
@@ -26,19 +29,19 @@ class SkinTableViewController: UIViewController, UITableViewDelegate, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(seasonNo, searchType)
+        print(seasonNo, theSearchType)
         
         tableView.delegate = self
         tableView.dataSource = self
         
         var dataRef = DatabaseReference()
-        if (searchType == SearchType.BP)
+        if (theSearchType == SearchType.BP)
         {
             dataRef = bPSkinRef.child("SP_S" + String(seasonNo) + "_Skins")
         }
         else
         {
-            dataRef = iSSkinRef.child(searchType.rawValue + "_Skins")
+            dataRef = iSSkinRef.child(theSearchType.rawValue + "_Skins")
         }
         
         // Do any additional setup after loading the view.
@@ -98,7 +101,7 @@ class SkinTableViewController: UIViewController, UITableViewDelegate, UITableVie
         let imageURL = URL(string: skin.imageLinkSmall as! String)
         downloadImage(urlstr: skin.imageLinkSmall as! String, imageView: cell.cellImage)
         
-        if (searchType == SearchType.BP)
+        if (theSearchType == SearchType.BP)
         {
             cell.cellCost.text = ""
             let image = UIImage(named: "Battle_Pass_icon")
@@ -114,16 +117,14 @@ class SkinTableViewController: UIViewController, UITableViewDelegate, UITableVie
         return cell
     }
     
-    func downloadImage(urlstr: String, imageView: UIImageView) {
-        let url = URL(string: urlstr)!
-        let task = URLSession.shared.dataTask(with: url) { data, _, _ in
-            guard let data = data else { return }
-            DispatchQueue.main.async { // Make sure you're on the main thread here
-                imageView.image = UIImage(data: data)
-            }
-        }
-        task.resume()
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        selectedSkin = self.skinCollection[indexPath.row]
+        performSegue(withIdentifier: "segueDetail", sender: self)
+        
     }
+    
+    
     
 
     /*
@@ -171,4 +172,15 @@ class SkinTableViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     */
 
+}
+
+func downloadImage(urlstr: String, imageView: UIImageView) {
+    let url = URL(string: urlstr)!
+    let task = URLSession.shared.dataTask(with: url) { data, _, _ in
+        guard let data = data else { return }
+        DispatchQueue.main.async { // Make sure you're on the main thread here
+            imageView.image = UIImage(data: data)
+        }
+    }
+    task.resume()
 }

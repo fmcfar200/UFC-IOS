@@ -16,6 +16,10 @@ enum SearchType: String {
     case RARE = "rare"
     case EPIC = "epic"
     case LEGENDARY = "legendary"
+    
+    init(){
+        self = .BP
+    }
 }
 
 class SkinSelectController: UIViewController {
@@ -34,11 +38,9 @@ class SkinSelectController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         let skinController = segue.destination as! SkinTableViewController
-        skinController.searchType = searchType
+        theSearchType = searchType
         skinController.seasonNo = seasonNo
     
-        
-        
     }
     
     @IBAction func buttonPress(_ sender: UIButton) {
