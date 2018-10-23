@@ -45,7 +45,6 @@ class ChallengeViewController: UIViewController, UITableViewDelegate, UITableVie
         request.setValue(key, forHTTPHeaderField: "Authorization")
         request.setValue("v1.1", forHTTPHeaderField: "X-Fortnite-API-Version")
         request.setValue("application/form-data current", forHTTPHeaderField: "season")
-        var theCollection = [Challenge]()
         
         DispatchQueue.global(qos: .userInteractive).async {
             let task = URLSession.shared.dataTask(with: request) { data, response, error in

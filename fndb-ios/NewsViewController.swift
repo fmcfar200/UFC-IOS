@@ -33,7 +33,6 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
         var request = URLRequest(url: url)
         request.setValue(key, forHTTPHeaderField: "Authorization")
         request.httpMethod = "POST"
-        var theCollection = [News]()
         
         DispatchQueue.global(qos: .userInteractive).async {
             let task = URLSession.shared.dataTask(with: request) { data, response, error in
@@ -47,8 +46,7 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
                     print("response = \(String(describing: response))")
                 }
                 
-                let responseString = String(data: data, encoding: .utf8)
-                //print("responseString = \(String(describing: responseString))")
+                //let responseString = String(data: data, encoding: .utf8)
                 do {
                     let newsResponse = try JSONDecoder().decode(NewsResponse.self, from: data)
                     self.newsCollection = newsResponse.entries

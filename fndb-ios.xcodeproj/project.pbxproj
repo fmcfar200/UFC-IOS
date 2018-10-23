@@ -27,6 +27,8 @@
 		4CF79F03217A7CF800C9A5C5 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF79F02217A7CF800C9A5C5 /* News.swift */; };
 		4CF79F05217A7F4300C9A5C5 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF79F04217A7F4300C9A5C5 /* NewsTableViewCell.swift */; };
 		4CFCF5FF217FB83A00F55762 /* WeaponsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFCF5FE217FB83A00F55762 /* WeaponsViewController.swift */; };
+		4CFCF601217FB99500F55762 /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFCF600217FB99500F55762 /* Weapon.swift */; };
+		4CFCF603217FC01C00F55762 /* WeaponCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFCF602217FC01C00F55762 /* WeaponCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		4CF79F02217A7CF800C9A5C5 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		4CF79F04217A7F4300C9A5C5 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		4CFCF5FE217FB83A00F55762 /* WeaponsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponsViewController.swift; sourceTree = "<group>"; };
+		4CFCF600217FB99500F55762 /* Weapon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weapon.swift; sourceTree = "<group>"; };
+		4CFCF602217FC01C00F55762 /* WeaponCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponCollectionViewCell.swift; sourceTree = "<group>"; };
 		8CB15914473BCCC4D09E974C /* Pods-fndb-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fndb-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-fndb-ios/Pods-fndb-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		8DB6DAFA9540923C8BF4DA08 /* Pods-fndb-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fndb-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-fndb-ios/Pods-fndb-ios.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -109,6 +113,7 @@
 				4CEC5B6E21787EDC00B74866 /* Skin.swift */,
 				4CF79F02217A7CF800C9A5C5 /* News.swift */,
 				4C453D2D217E2B33003C41D6 /* Challenge.swift */,
+				4CFCF600217FB99500F55762 /* Weapon.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -119,6 +124,7 @@
 				4CEC5B702178978100B74866 /* SkinTableViewCell.swift */,
 				4CF79F04217A7F4300C9A5C5 /* NewsTableViewCell.swift */,
 				4C453D2B217E1AE9003C41D6 /* ChallengeTableViewCell.swift */,
+				4CFCF602217FC01C00F55762 /* WeaponCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -285,10 +291,12 @@
 				4C9AC1FB2176F65B00C9D03C /* ViewController.swift in Sources */,
 				4C363C172177981D00E9A27F /* SkinSelectController.swift in Sources */,
 				4CF79F05217A7F4300C9A5C5 /* NewsTableViewCell.swift in Sources */,
+				4CFCF601217FB99500F55762 /* Weapon.swift in Sources */,
 				4CEC5B712178978100B74866 /* SkinTableViewCell.swift in Sources */,
 				4CF79F03217A7CF800C9A5C5 /* News.swift in Sources */,
 				4CEC5B732178A5B200B74866 /* SkinTableViewController.swift in Sources */,
 				4C9AC1F92176F65B00C9D03C /* AppDelegate.swift in Sources */,
+				4CFCF603217FC01C00F55762 /* WeaponCollectionViewCell.swift in Sources */,
 				4CEC5B6F21787EDC00B74866 /* Skin.swift in Sources */,
 				4C453D2C217E1AE9003C41D6 /* ChallengeTableViewCell.swift in Sources */,
 				4CF79EFC217A342700C9A5C5 /* DetailViewController.swift in Sources */,
