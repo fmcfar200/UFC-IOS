@@ -1,46 +1,35 @@
 //
-//  ViewController.swift
+//  LeaderboardViewController.swift
 //  fndb-ios
 //
-//  Created by fraser mcfarlane on 17/10/2018.
+//  Created by fraser mcfarlane on 24/10/2018.
 //  Copyright © 2018 P-Flow Studios. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class LeaderboardViewController: UIViewController {
     
-    struct itemShopResponse:Decodable {
-        let date_layout:String?
-        let lastupdate:Int?
-        let date:String?
-        let rows:Int?
-        let vbucks:String?
-        let items:[ShopItem]?
-    
+    struct LeaderboardResponse: Decodable {
+        let window:String?
+        let entries:[Leaderboard]
     }
-
-    @IBOutlet weak var skinButton: UIView!
-    @IBOutlet weak var statsButton: UIView!
-    @IBOutlet weak var weaponsButton: UIView!
-    @IBOutlet weak var leaderboardButton: UIView!
-    @IBOutlet weak var challengesButton: UIView!
-    @IBOutlet weak var newsButton: UIView!
     
-    var searchType = SearchType.PROMO
+    var leaderboardCollectionKills = [Leaderboard]()
+    var leaderboardCollectionWins = [Leaderboard]()
+    var leaderboardCollectionMins = [Leaderboard]()
     
     
-    override func viewDidLoad()
-    {
+    override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
         
         let key = String("a4587bc8429ba5f7e2be4d869fddf5ff")
-        let url = URL(string: "https://fortnite-public-api.theapinetwork.com/prod09/store/get")!
+        let url = URL(string: "https://fortnite-public-api.theapinetwork.com/prod09/leaderboards/get?window=top_10_kills")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue(key, forHTTPHeaderField: "Authorization")
+        request.setValue("v1.1", forHTTPHeaderField: "X-Fortnite-API-Version")
+        request.setValue("application/form-data current", forHTTPHeaderField: "season")
         
         DispatchQueue.global(qos: .userInteractive).async {
             let task = URLSession.shared.dataTask(with: request) { data, response, error in
@@ -57,9 +46,9 @@ class ViewController: UIViewController {
                 let responseString = String(data: data, encoding: .utf8)
                 //let json = try? JSONSerialization.jsonObject(with: data, options: [])
                 do {
-                    let shopResponse = try JSONDecoder().decode(itemShopResponse.self, from: data)
+                    let leaderboardResponse = try JSONDecoder().decode(LeaderboardResponse.self, from: data)
                     //self.challengeCollection = challengeResponse.challenges
-                    print(shopResponse.items?[0].name)
+                    print(leaderboardResponse)
                     
                     DispatchQueue.main.async {
                         //self.tableView.reloadData()
@@ -75,39 +64,19 @@ class ViewController: UIViewController {
             task.resume()
         }
 
+        
+        // Do any additional setup after loading the view.
     }
     
-    @IBAction func skinButtonTouch(_ sender: Any) {
-    }
-    
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if(segue.identifier == "segueHome")
-        {
-            let skinController = segue.destination as! SkinTableViewController
-            theSearchType = self.searchType
-            skinController.seasonNo = 0
-        }
-        
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
     }
-    
-    @IBAction func toSkinPress(_ sender: UIButton) {
-        let tag = sender.tag
-        switch tag {
-        case 2:
-            searchType = SearchType.PROMO
+    */
 
-        case 3:
-            searchType = SearchType.SEASONAL
-
-        default:
-            searchType = SearchType.BP
-        }
-        performSegue(withIdentifier: "segueHome", sender: self)
-
-        
-    }
-    
-    
 }
-

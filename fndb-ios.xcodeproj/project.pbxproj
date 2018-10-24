@@ -12,6 +12,9 @@
 		4C453D2A217E18A1003C41D6 /* ChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C453D29217E18A1003C41D6 /* ChallengeViewController.swift */; };
 		4C453D2C217E1AE9003C41D6 /* ChallengeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C453D2B217E1AE9003C41D6 /* ChallengeTableViewCell.swift */; };
 		4C453D2E217E2B33003C41D6 /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C453D2D217E2B33003C41D6 /* Challenge.swift */; };
+		4C53035A2181030E009EAD32 /* Leaderboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5303592181030E009EAD32 /* Leaderboard.swift */; };
+		4C53035C21810388009EAD32 /* LeaderboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C53035B21810388009EAD32 /* LeaderboardViewController.swift */; };
+		4C53035E218109B0009EAD32 /* ShopItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C53035D218109B0009EAD32 /* ShopItem.swift */; };
 		4C9AC1F92176F65B00C9D03C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9AC1F82176F65B00C9D03C /* AppDelegate.swift */; };
 		4C9AC1FB2176F65B00C9D03C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9AC1FA2176F65B00C9D03C /* ViewController.swift */; };
 		4C9AC1FE2176F65B00C9D03C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C9AC1FC2176F65B00C9D03C /* Main.storyboard */; };
@@ -37,6 +40,9 @@
 		4C453D29217E18A1003C41D6 /* ChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeViewController.swift; sourceTree = "<group>"; };
 		4C453D2B217E1AE9003C41D6 /* ChallengeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeTableViewCell.swift; sourceTree = "<group>"; };
 		4C453D2D217E2B33003C41D6 /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
+		4C5303592181030E009EAD32 /* Leaderboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Leaderboard.swift; sourceTree = "<group>"; };
+		4C53035B21810388009EAD32 /* LeaderboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardViewController.swift; sourceTree = "<group>"; };
+		4C53035D218109B0009EAD32 /* ShopItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopItem.swift; sourceTree = "<group>"; };
 		4C9AC1F52176F65B00C9D03C /* fndb-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "fndb-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C9AC1F82176F65B00C9D03C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C9AC1FA2176F65B00C9D03C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +120,8 @@
 				4CF79F02217A7CF800C9A5C5 /* News.swift */,
 				4C453D2D217E2B33003C41D6 /* Challenge.swift */,
 				4CFCF600217FB99500F55762 /* Weapon.swift */,
+				4C5303592181030E009EAD32 /* Leaderboard.swift */,
+				4C53035D218109B0009EAD32 /* ShopItem.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -139,6 +147,7 @@
 				4CF79EFD217A7B0400C9A5C5 /* NewsViewController.swift */,
 				4C453D29217E18A1003C41D6 /* ChallengeViewController.swift */,
 				4CFCF5FE217FB83A00F55762 /* WeaponsViewController.swift */,
+				4C53035B21810388009EAD32 /* LeaderboardViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -286,10 +295,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C53035E218109B0009EAD32 /* ShopItem.swift in Sources */,
 				4C453D2A217E18A1003C41D6 /* ChallengeViewController.swift in Sources */,
 				4C453D2E217E2B33003C41D6 /* Challenge.swift in Sources */,
 				4C9AC1FB2176F65B00C9D03C /* ViewController.swift in Sources */,
 				4C363C172177981D00E9A27F /* SkinSelectController.swift in Sources */,
+				4C53035C21810388009EAD32 /* LeaderboardViewController.swift in Sources */,
 				4CF79F05217A7F4300C9A5C5 /* NewsTableViewCell.swift in Sources */,
 				4CFCF601217FB99500F55762 /* Weapon.swift in Sources */,
 				4CEC5B712178978100B74866 /* SkinTableViewCell.swift in Sources */,
@@ -297,6 +308,7 @@
 				4CEC5B732178A5B200B74866 /* SkinTableViewController.swift in Sources */,
 				4C9AC1F92176F65B00C9D03C /* AppDelegate.swift in Sources */,
 				4CFCF603217FC01C00F55762 /* WeaponCollectionViewCell.swift in Sources */,
+				4C53035A2181030E009EAD32 /* Leaderboard.swift in Sources */,
 				4CEC5B6F21787EDC00B74866 /* Skin.swift in Sources */,
 				4C453D2C217E1AE9003C41D6 /* ChallengeTableViewCell.swift in Sources */,
 				4CF79EFC217A342700C9A5C5 /* DetailViewController.swift in Sources */,
