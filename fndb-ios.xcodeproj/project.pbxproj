@@ -15,6 +15,7 @@
 		4C53035A2181030E009EAD32 /* Leaderboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5303592181030E009EAD32 /* Leaderboard.swift */; };
 		4C53035C21810388009EAD32 /* LeaderboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C53035B21810388009EAD32 /* LeaderboardViewController.swift */; };
 		4C53035E218109B0009EAD32 /* ShopItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C53035D218109B0009EAD32 /* ShopItem.swift */; };
+		4C653D732188C0CB009AD4C6 /* LeaderboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C653D722188C0CB009AD4C6 /* LeaderboardTableViewCell.swift */; };
 		4C9AC1F92176F65B00C9D03C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9AC1F82176F65B00C9D03C /* AppDelegate.swift */; };
 		4C9AC1FB2176F65B00C9D03C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9AC1FA2176F65B00C9D03C /* ViewController.swift */; };
 		4C9AC1FE2176F65B00C9D03C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C9AC1FC2176F65B00C9D03C /* Main.storyboard */; };
@@ -44,6 +45,7 @@
 		4C5303592181030E009EAD32 /* Leaderboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Leaderboard.swift; sourceTree = "<group>"; };
 		4C53035B21810388009EAD32 /* LeaderboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardViewController.swift; sourceTree = "<group>"; };
 		4C53035D218109B0009EAD32 /* ShopItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopItem.swift; sourceTree = "<group>"; };
+		4C653D722188C0CB009AD4C6 /* LeaderboardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardTableViewCell.swift; sourceTree = "<group>"; };
 		4C9AC1F52176F65B00C9D03C /* fndb-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "fndb-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C9AC1F82176F65B00C9D03C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C9AC1FA2176F65B00C9D03C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				4C453D2B217E1AE9003C41D6 /* ChallengeTableViewCell.swift */,
 				4CFCF602217FC01C00F55762 /* WeaponCollectionViewCell.swift */,
 				4CFF56672182398500D7A069 /* ShopCollectionViewCell.swift */,
+				4C653D722188C0CB009AD4C6 /* LeaderboardTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 				4C9AC1FB2176F65B00C9D03C /* ViewController.swift in Sources */,
 				4C363C172177981D00E9A27F /* SkinSelectController.swift in Sources */,
 				4C53035C21810388009EAD32 /* LeaderboardViewController.swift in Sources */,
+				4C653D732188C0CB009AD4C6 /* LeaderboardTableViewCell.swift in Sources */,
 				4CF79F05217A7F4300C9A5C5 /* NewsTableViewCell.swift in Sources */,
 				4CFCF601217FB99500F55762 /* Weapon.swift in Sources */,
 				4CEC5B712178978100B74866 /* SkinTableViewCell.swift in Sources */,

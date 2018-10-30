@@ -8,7 +8,9 @@
 
 import UIKit
 
-class LeaderboardViewController: UIViewController {
+class LeaderboardViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    
     
     struct LeaderboardResponse: Decodable {
         let window:String?
@@ -18,10 +20,15 @@ class LeaderboardViewController: UIViewController {
     var leaderboardCollectionKills = [Leaderboard]()
     var leaderboardCollectionWins = [Leaderboard]()
     var leaderboardCollectionMins = [Leaderboard]()
+    var theLBCollection = [Leaderboard]()
     
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.delegate = self
+        tableView.dataSource = self
         
         let key = String("a4587bc8429ba5f7e2be4d869fddf5ff")
         let url = URL(string: "https://fortnite-public-api.theapinetwork.com/prod09/leaderboards/get?window=top_10_kills")!
@@ -47,11 +54,12 @@ class LeaderboardViewController: UIViewController {
                 //let json = try? JSONSerialization.jsonObject(with: data, options: [])
                 do {
                     let leaderboardResponse = try JSONDecoder().decode(LeaderboardResponse.self, from: data)
-                    //self.challengeCollection = challengeResponse.challenges
-                    print(leaderboardResponse)
+                    let entries = leaderboardResponse.entries
+                    self.theLBCollection = entries
+                    print(self.theLBCollection[0].username)
                     
                     DispatchQueue.main.async {
-                        //self.tableView.reloadData()
+                        self.tableView.reloadData()
                     }
                     
                     
@@ -66,6 +74,24 @@ class LeaderboardViewController: UIViewController {
 
         
         // Do any additional setup after loading the view.
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return theLBCollection.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cellID = "LeaderboardCell"
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as? LeaderboardTableViewCell else{
+            fatalError("cell error: not member of LeaderboardTableViewCell")
+        }
+        
+        let item = theLBCollection[indexPath.row]
+        cell.nameLabel.text = item.username
+        cell.valueLabel.text = item.kills
+        
+        cell.layoutSubviews()
+        return cell
     }
     
 
