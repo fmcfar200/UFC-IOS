@@ -8,7 +8,9 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    
     
     struct itemShopResponse:Decodable {
         let date_layout:String?
@@ -26,8 +28,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var leaderboardButton: UIView!
     @IBOutlet weak var challengesButton: UIView!
     @IBOutlet weak var newsButton: UIView!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     var searchType = SearchType.PROMO
+    
+    var shopCollection = [ShopItem]()
     
     
     override func viewDidLoad()
@@ -35,6 +40,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        collectionView.dataSource=self
+        collectionView.delegate=self
         
         let key = String("a4587bc8429ba5f7e2be4d869fddf5ff")
         let url = URL(string: "https://fortnite-public-api.theapinetwork.com/prod09/store/get")!
@@ -58,11 +65,9 @@ class ViewController: UIViewController {
                 //let json = try? JSONSerialization.jsonObject(with: data, options: [])
                 do {
                     let shopResponse = try JSONDecoder().decode(itemShopResponse.self, from: data)
-                    //self.challengeCollection = challengeResponse.challenges
-                    print(shopResponse.items?[0].name)
-                    
+                    self.shopCollection = shopResponse.items!
                     DispatchQueue.main.async {
-                        //self.tableView.reloadData()
+                        self.collectionView.reloadData()
                     }
                     
                     
@@ -106,6 +111,26 @@ class ViewController: UIViewController {
         performSegue(withIdentifier: "segueHome", sender: self)
 
         
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return shopCollection.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cellID = "ShopCell"
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as? ShopCollectionViewCell else{
+            fatalError("cell error: not member of ShopCollectionViewCell")
+        }
+        
+        let item = self.shopCollection[indexPath.row]
+        cell.nameLabel.text = item.name
+        cell.priceLabel.text = item.cost
+        downloadImage(urlstr: (item.item?.images?.background)!, imageView: cell.imageView)
+        
+        
+        cell.layoutSubviews()
+        return cell
     }
     
     
