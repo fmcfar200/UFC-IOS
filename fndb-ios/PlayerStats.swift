@@ -16,7 +16,6 @@ class PlayerStats: Decodable {
     let curr_p10:statSet?
     let curr_p9:statSet?
     
-
 }
 
 class statSet:Decodable{
@@ -46,6 +45,6 @@ class stat: Decodable{
     let valueInt:Int?
     let value:String?
     let rank:Int?
-    let percentile:Int?
+    let percentile:Double?
     let displayValue:String?
 }
