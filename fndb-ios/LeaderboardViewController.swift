@@ -11,7 +11,6 @@ import UIKit
 class LeaderboardViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
-    
     struct LeaderboardResponse: Decodable {
         let window:String?
         let entries:[Leaderboard]
@@ -22,6 +21,12 @@ class LeaderboardViewController: UIViewController, UITableViewDelegate, UITableV
     var leaderboardCollectionMins = [Leaderboard]()
     var theLBCollection = [Leaderboard]()
     
+    let killsSearch = "kills"
+    let winsSearch = "wins"
+    let scoreSearch = "score"
+    let minsSearch = "mins"
+    @IBOutlet weak var headerLabel: UILabel!
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -30,8 +35,51 @@ class LeaderboardViewController: UIViewController, UITableViewDelegate, UITableV
         tableView.delegate = self
         tableView.dataSource = self
         
+        getTop10(type: killsSearch)
+
+        
+        // Do any additional setup after loading the view.
+    }
+    
+    @IBAction func buttonTouch(_ sender: UIButton) {
+        let tag = sender.tag
+        switch tag {
+        case 0:
+            print("Kills")
+            getTop10(type: killsSearch)
+            tableView.reloadData()
+            headerLabel.text = "Kills"
+        case 1:
+            print("Wins")
+            getTop10(type: winsSearch)
+            tableView.reloadData()
+            headerLabel.text = "Wins"
+
+        case 2:
+            print("Score")
+            getTop10(type: scoreSearch)
+            tableView.reloadData()
+            headerLabel.text = "Score"
+
+        case 3:
+            print("Mins")
+            getTop10(type: minsSearch)
+            tableView.reloadData()
+            headerLabel.text = "Minutes"
+
+        default:
+            print("Kills")
+            getTop10(type: killsSearch)
+            tableView.reloadData()
+            headerLabel.text = "Kills"
+
+        }
+        
+    }
+    
+    func getTop10(type:String){
         let key = String("a4587bc8429ba5f7e2be4d869fddf5ff")
-        let url = URL(string: "https://fortnite-public-api.theapinetwork.com/prod09/leaderboards/get?window=top_10_kills")!
+        let url = URL(string: "https://fortnite-public-api.theapinetwork.com/prod09/leaderboards/get?window=top_10_"+type)!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue(key, forHTTPHeaderField: "Authorization")
@@ -56,7 +104,6 @@ class LeaderboardViewController: UIViewController, UITableViewDelegate, UITableV
                     let leaderboardResponse = try JSONDecoder().decode(LeaderboardResponse.self, from: data)
                     let entries = leaderboardResponse.entries
                     self.theLBCollection = entries
-                    print(self.theLBCollection[0].username)
                     
                     DispatchQueue.main.async {
                         self.tableView.reloadData()
@@ -72,9 +119,8 @@ class LeaderboardViewController: UIViewController, UITableViewDelegate, UITableV
             task.resume()
         }
 
-        
-        // Do any additional setup after loading the view.
     }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return theLBCollection.count

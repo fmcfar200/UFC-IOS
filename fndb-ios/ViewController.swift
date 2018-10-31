@@ -43,6 +43,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         collectionView.dataSource=self
         collectionView.delegate=self
         
+        
         let key = String("a4587bc8429ba5f7e2be4d869fddf5ff")
         let url = URL(string: "https://fortnite-public-api.theapinetwork.com/prod09/store/get")!
         var request = URLRequest(url: url)
