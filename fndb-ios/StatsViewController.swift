@@ -52,19 +52,32 @@ class StatsViewController: UIViewController {
                 }
                 
                 let responseString = String(data: data, encoding: .utf8)
-                do {
-                    let response = try JSONDecoder().decode(statsResponse.self, from: data)
-                    let stats = response.stats
+                
+                do{
+                    let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [String: AnyObject]
+                    let stats = json!["stats"]! as! [String:AnyObject]
+                    let soloStats = stats["p2"]
+                    let count = Int(soloStats!.count)-1
                     
-                    DispatchQueue.main.async {
-
-
-                    }
+                    var collection: [String:Any] = [:]
+                    let wins = soloStats!["top1"] as! [String:AnyObject]
+                    let kills = soloStats!["kills"] as! [String:AnyObject]
+                    let matches = soloStats!["matches"] as! [String:AnyObject]
+                    
+                    collection.updateValue(wins, forKey: "Wins")
                     
                     
-                }catch let jsonErr{
-                    print(jsonErr)
+                    
+                    
+                    
+                    
+                    
                 }
+                catch let error as NSError{
+                    debugPrint(error)
+                }
+                
+
             }
             task.resume()
         }
