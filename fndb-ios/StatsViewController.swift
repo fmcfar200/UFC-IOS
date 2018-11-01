@@ -8,7 +8,9 @@
 
 import UIKit
 
-class StatsViewController: UIViewController {
+class StatsViewController: UIViewController, UITableViewDelegate,UITableViewDataSource {
+    
+    
     
     struct statsResponse: Decodable{
         let accountId:String?
@@ -20,16 +22,26 @@ class StatsViewController: UIViewController {
         
     }
     
+    struct Stat{
+        var key: String!
+        var value: String!
+    }
+    
     
     
     
     @IBOutlet weak var textEnter: UITextField!
     @IBOutlet weak var submitButton: UIButton!
+    @IBOutlet weak var tableView: UITableView!
+    
+    var collection: [String:String] = [:]
+    var statArray = [Stat]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        tableView.delegate = self
+        tableView.dataSource = self
 
         // Do any additional setup after loading the view.
         let key = String("246a06d4-9ecc-443f-bd96-67e18bb94e4d")
@@ -59,14 +71,37 @@ class StatsViewController: UIViewController {
                     let soloStats = stats["p2"]
                     let count = Int(soloStats!.count)-1
                     
-                    var collection: [String:Any] = [:]
                     let wins = soloStats!["top1"] as! [String:AnyObject]
                     let kills = soloStats!["kills"] as! [String:AnyObject]
                     let matches = soloStats!["matches"] as! [String:AnyObject]
+                    let winRatio = soloStats!["winRatio"] as! [String:AnyObject]
+                    let kd = soloStats!["kd"] as! [String:AnyObject]
+                    let kpg = soloStats!["kpg"] as! [String:AnyObject]
+                    let scorePerMatch = soloStats!["scorePerMatch"] as! [String:AnyObject]
+                    let score = soloStats!["score"] as! [String:AnyObject]
+
+
+
+
+
                     
-                    collection.updateValue(wins, forKey: "Wins")
+                    self.collection.updateValue(wins["value"] as! String, forKey: wins["label"] as! String)
+                    self.collection.updateValue(kills["value"] as! String, forKey: kills["label"] as! String)
+                    self.collection.updateValue(matches["value"] as! String, forKey: matches["label"] as! String)
+                    self.collection.updateValue(winRatio["value"] as! String, forKey: winRatio["label"] as! String)
+                    self.collection.updateValue(kd["value"] as! String, forKey: kd["label"] as! String)
+                    self.collection.updateValue(kpg["value"] as! String, forKey: kpg["label"] as! String)
+                    self.collection.updateValue(scorePerMatch["value"] as! String, forKey: scorePerMatch["label"] as! String)
+                    self.collection.updateValue(score["value"] as! String, forKey: score["label"] as! String)
+
                     
+                    for (key, value) in self.collection{
+                        self.statArray.append(Stat(key: key, value: value as! String))
+                    }
                     
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
                     
                     
                     
@@ -82,6 +117,23 @@ class StatsViewController: UIViewController {
             task.resume()
         }
         
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return statArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cellID = "StatsCell"
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as? StatsTableViewCell else{
+            fatalError("cell error: not member of [CELL]")
+        }
+        
+        let item = statArray[indexPath.row]
+        cell.keyLabel.text = item.key
+        cell.valueLabel.text = item.value
+        cell.layoutSubviews()
+        return cell
     }
     
 }

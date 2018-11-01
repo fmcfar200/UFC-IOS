@@ -25,6 +25,7 @@
 		4C9AC2032176F65D00C9D03C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C9AC2012176F65D00C9D03C /* LaunchScreen.storyboard */; };
 		4C9AC20F2176FE4000C9D03C /* LuckiestGuy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4C9AC20E2176FE4000C9D03C /* LuckiestGuy.ttf */; };
 		4CA70D332177CBC00044C4F3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4CA70D322177CBC00044C4F3 /* GoogleService-Info.plist */; };
+		4CB3D556218B7C9E00F4A045 /* StatsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB3D555218B7C9E00F4A045 /* StatsTableViewCell.swift */; };
 		4CEC5B6F21787EDC00B74866 /* Skin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEC5B6E21787EDC00B74866 /* Skin.swift */; };
 		4CEC5B712178978100B74866 /* SkinTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEC5B702178978100B74866 /* SkinTableViewCell.swift */; };
 		4CEC5B732178A5B200B74866 /* SkinTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEC5B722178A5B200B74866 /* SkinTableViewController.swift */; };
@@ -59,6 +60,7 @@
 		4C9AC2042176F65D00C9D03C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C9AC20E2176FE4000C9D03C /* LuckiestGuy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = LuckiestGuy.ttf; path = "../../../Downloads/luckiest-guy/LuckiestGuy.ttf"; sourceTree = "<group>"; };
 		4CA70D322177CBC00044C4F3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		4CB3D555218B7C9E00F4A045 /* StatsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsTableViewCell.swift; sourceTree = "<group>"; };
 		4CEC5B6E21787EDC00B74866 /* Skin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skin.swift; sourceTree = "<group>"; };
 		4CEC5B702178978100B74866 /* SkinTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinTableViewCell.swift; sourceTree = "<group>"; };
 		4CEC5B722178A5B200B74866 /* SkinTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinTableViewController.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				4CFCF602217FC01C00F55762 /* WeaponCollectionViewCell.swift */,
 				4CFF56672182398500D7A069 /* ShopCollectionViewCell.swift */,
 				4C653D722188C0CB009AD4C6 /* LeaderboardTableViewCell.swift */,
+				4CB3D555218B7C9E00F4A045 /* StatsTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				4CEC5B712178978100B74866 /* SkinTableViewCell.swift in Sources */,
 				4CF79F03217A7CF800C9A5C5 /* News.swift in Sources */,
 				4CEC5B732178A5B200B74866 /* SkinTableViewController.swift in Sources */,
+				4CB3D556218B7C9E00F4A045 /* StatsTableViewCell.swift in Sources */,
 				4C7C1A5E218A1283006F57CC /* StatsViewController.swift in Sources */,
 				4C9AC1F92176F65B00C9D03C /* AppDelegate.swift in Sources */,
 				4CFF56682182398500D7A069 /* ShopCollectionViewCell.swift in Sources */,
