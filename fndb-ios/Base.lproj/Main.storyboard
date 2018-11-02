@@ -89,6 +89,9 @@
                                 <state key="normal" title="Lifetime">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="typeButtonPress:" destination="4iJ-IT-YYp" eventType="touchUpInside" id="m0V-cv-RXn"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="coY-el-FKt">
                                 <rect key="frame" x="10" y="78" width="110" height="80"/>
@@ -98,8 +101,11 @@
                                 <state key="normal" title="PC">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="platformButtonPress:" destination="4iJ-IT-YYp" eventType="touchUpInside" id="qD2-Zc-Vhb"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lsa-R6-tO1">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lsa-R6-tO1">
                                 <rect key="frame" x="128" y="78" width="110" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.4941176471" green="0.58823529409999997" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -107,8 +113,11 @@
                                 <state key="normal" title="XBOX">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="platformButtonPress:" destination="4iJ-IT-YYp" eventType="touchUpInside" id="bCF-TR-jnF"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vfj-wy-mjc">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vfj-wy-mjc">
                                 <rect key="frame" x="249" y="78" width="110" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.4941176471" green="0.58823529409999997" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -116,6 +125,9 @@
                                 <state key="normal" title="PSN">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="platformButtonPress:" destination="4iJ-IT-YYp" eventType="touchUpInside" id="UyN-EK-JTq"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NWP-6Q-Av7">
                                 <rect key="frame" x="191" y="30" width="80" height="40"/>
@@ -125,6 +137,9 @@
                                 <state key="normal" title="Duo">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="typeButtonPress:" destination="4iJ-IT-YYp" eventType="touchUpInside" id="MF2-Ad-tAE"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZWS-7P-nP0">
                                 <rect key="frame" x="279" y="30" width="80" height="40"/>
@@ -134,6 +149,9 @@
                                 <state key="normal" title="Squad">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="typeButtonPress:" destination="4iJ-IT-YYp" eventType="touchUpInside" id="v73-5t-UvJ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXw-kk-GEL">
                                 <rect key="frame" x="98" y="30" width="80" height="40"/>
@@ -143,6 +161,9 @@
                                 <state key="normal" title="Solo">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="typeButtonPress:" destination="4iJ-IT-YYp" eventType="touchUpInside" id="4kB-ES-Hx5"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Enter Epic Username..." borderStyle="line" placeholder="Enter Epic Username.." clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n2v-3h-ys3">
                                 <rect key="frame" x="37" y="173" width="300" height="27"/>
@@ -160,6 +181,9 @@
                                 <state key="normal" title="Submit">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="submiteButtonPress:" destination="4iJ-IT-YYp" eventType="touchUpInside" id="tk3-P3-FgL"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zpu-Rj-qCD">
                                 <rect key="frame" x="37" y="279" width="300" height="340"/>
