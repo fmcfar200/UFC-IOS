@@ -20,6 +20,16 @@ class StatsViewController: UIViewController, UITableViewDelegate,UITableViewData
     @IBOutlet weak var textEnter: UITextField!
     @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchView: UIView!
+    
+    var killsString:String = ""
+    var winsString:String = ""
+    var matchesString:String = ""
+    @IBOutlet weak var winsLabel: UILabel!
+    @IBOutlet weak var killsLabel: UILabel!
+    @IBOutlet weak var matchesLabel: UILabel!
+    @IBOutlet weak var boxViews: UIView!
+    
     
     var collection: [String:String] = [:]
     var statArray = [Stat]()
@@ -27,12 +37,14 @@ class StatsViewController: UIViewController, UITableViewDelegate,UITableViewData
     var platform:String = "pc"
     var type:String = "p2"
     var username:String = ""
+    var searched:Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.isHidden = true
 
         // Do any additional setup after loading the view.
        
@@ -86,36 +98,75 @@ class StatsViewController: UIViewController, UITableViewDelegate,UITableViewData
                 let responseString = String(data: data, encoding: .utf8)
                 
                 do{
-                    let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [String: AnyObject]
-                    let stats = json!["stats"]! as! [String:AnyObject]
-                    let soloStats = stats[type]
-                    
-                    let wins = soloStats!["top1"] as! [String:AnyObject]
-                    let kills = soloStats!["kills"] as! [String:AnyObject]
-                    let matches = soloStats!["matches"] as! [String:AnyObject]
-                    let winRatio = soloStats!["winRatio"] as! [String:AnyObject]
-                    let kd = soloStats!["kd"] as! [String:AnyObject]
-                    let kpg = soloStats!["kpg"] as! [String:AnyObject]
-                    let scorePerMatch = soloStats!["scorePerMatch"] as! [String:AnyObject]
-                    let score = soloStats!["score"] as! [String:AnyObject]
-                    
-                
-                    self.collection.updateValue(wins["value"] as! String, forKey: wins["label"] as! String)
-                    self.collection.updateValue(kills["value"] as! String, forKey: kills["label"] as! String)
-                    self.collection.updateValue(matches["value"] as! String, forKey: matches["label"] as! String)
-                    self.collection.updateValue(winRatio["value"] as! String, forKey: winRatio["label"] as! String)
-                    self.collection.updateValue(kd["value"] as! String, forKey: kd["label"] as! String)
-                    self.collection.updateValue(kpg["value"] as! String, forKey: kpg["label"] as! String)
-                    self.collection.updateValue(scorePerMatch["value"] as! String, forKey: scorePerMatch["label"] as! String)
-                    self.collection.updateValue(score["value"] as! String, forKey: score["label"] as! String)
-                    
-                    
-                    for (key, value) in self.collection{
-                        self.statArray.append(Stat(key: key, value: value as! String))
+                    if (type != "lifeTimeStats")
+                    {
+                        let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [String: AnyObject]
+                        let stats = json!["stats"]! as! [String:AnyObject]
+                        let soloStats = stats[type]
+                        
+                        let wins = soloStats!["top1"] as! [String:AnyObject]
+                        let kills = soloStats!["kills"] as! [String:AnyObject]
+                        let matches = soloStats!["matches"] as! [String:AnyObject]
+                        let winRatio = soloStats!["winRatio"] as! [String:AnyObject]
+                        let kd = soloStats!["kd"] as! [String:AnyObject]
+                        let kpg = soloStats!["kpg"] as! [String:AnyObject]
+                        let scorePerMatch = soloStats!["scorePerMatch"] as! [String:AnyObject]
+                        let score = soloStats!["score"] as! [String:AnyObject]
+                        
+                        
+                        self.collection.updateValue(wins["value"] as! String, forKey: wins["label"] as! String)
+                        self.collection.updateValue(kills["value"] as! String, forKey: kills["label"] as! String)
+                        self.collection.updateValue(matches["value"] as! String, forKey: matches["label"] as! String)
+                        self.collection.updateValue(winRatio["value"] as! String, forKey: winRatio["label"] as! String)
+                        self.collection.updateValue(kd["value"] as! String, forKey: kd["label"] as! String)
+                        self.collection.updateValue(kpg["value"] as! String, forKey: kpg["label"] as! String)
+                        self.collection.updateValue(scorePerMatch["value"] as! String, forKey: scorePerMatch["label"] as! String)
+                        self.collection.updateValue(score["value"] as! String, forKey: score["label"] as! String)
+                        
+                        self.killsString = kills["value"] as! String
+                        self.winsString = wins["value"] as! String
+                        self.matchesString = matches["value"] as! String
+                        
+                        
+                        for (key, value) in self.collection{
+                            self.statArray.append(Stat(key: key, value: value as! String))
+                        }
                     }
+                    else{
+                        let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [String: AnyObject]
+                        let stats = json![type]! as! [[String:AnyObject]]
+                        for stat in stats{
+                            let key = stat["key"] as? String
+                            let value = stat["value"] as? String
+                            self.statArray.append(Stat(key: key, value: value))
+                            
+                            if (key == "Wins")
+                            {
+                                self.winsString = value as! String
+                            }
+                            else if (key == "Kills")
+                            {
+                                self.killsString = value as! String
+                            }
+                            else if (key == "Matches Played")
+                            {
+                                self.matchesString = value as! String
+                            }
+                        }
+                    }
+                    
                     
                     DispatchQueue.main.async {
                         self.tableView.reloadData()
+                        self.winsLabel.text = self.winsString
+                        self.killsLabel.text = self.killsString
+                        self.matchesLabel.text = self.matchesString
+                        
+                        self.tableView.isHidden = false
+                        self.boxViews.isHidden = false
+                        self.searchView.isHidden = true
+                        
+                        self.searched = true
                     }
                     
                     
@@ -135,16 +186,40 @@ class StatsViewController: UIViewController, UITableViewDelegate,UITableViewData
     
     @IBAction func typeButtonPress(_ sender: UIButton) {
         let tag = sender.tag
-        switch tag {
-        case 1:
-            type = "p2"
-        case 2:
-            type = "p10"
-        case 3:
-            type = "p9"
-        default:
-            type = "p2"
+        if (!searched)
+        {
+            switch tag {
+            case 0:
+                type = "lifeTimeStats"
+            case 1:
+                type = "p2"
+            case 2:
+                type = "p10"
+            case 3:
+                type = "p9"
+            default:
+                type = "p2"
+            }
         }
+        else{
+            
+            switch tag {
+            case 0:
+                type = "lifeTimeStats"
+            case 1:
+                type = "p2"
+            case 2:
+                type = "p10"
+            case 3:
+                type = "p9"
+            default:
+                type = "p2"
+            }
+            getStats(username: username, type: type, platform: platform)
+
+            
+        }
+       
         
         print (type)
     }
