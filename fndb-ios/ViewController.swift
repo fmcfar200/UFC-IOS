@@ -97,22 +97,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
     }
     
-    @IBAction func toSkinPress(_ sender: UIButton) {
-        let tag = sender.tag
-        switch tag {
-        case 2:
-            searchType = SearchType.PROMO
-
-        case 3:
-            searchType = SearchType.SEASONAL
-
-        default:
-            searchType = SearchType.BP
-        }
-        performSegue(withIdentifier: "segueHome", sender: self)
-
-        
-    }
+    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return shopCollection.count

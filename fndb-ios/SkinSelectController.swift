@@ -37,10 +37,28 @@ class SkinSelectController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
+        guard segue.identifier == "segue" else {return}
         let skinController = segue.destination as! SkinTableViewController
         theSearchType = searchType
         skinController.seasonNo = seasonNo
     
+    }
+    
+    @IBAction func toSkinPress(_ sender: UIButton) {
+        let tag = sender.tag
+        switch tag {
+        case 2:
+            searchType = SearchType.PROMO
+            
+        case 3:
+            searchType = SearchType.SEASONAL
+            
+        default:
+            searchType = SearchType.PROMO
+        }
+        performSegue(withIdentifier: "segue", sender: self)
+        
+        
     }
     
     @IBAction func buttonPress(_ sender: UIButton) {
