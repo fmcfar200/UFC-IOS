@@ -901,13 +901,19 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.41176470590000003" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Oua-1u-jMQ" secondAttribute="trailing" constant="31.5" id="0ci-N3-JUH"/>
                                     <constraint firstItem="Oua-1u-jMQ" firstAttribute="top" secondItem="4V3-b5-hUC" secondAttribute="topMargin" id="0xA-je-MxD"/>
                                     <constraint firstItem="rje-L8-QvJ" firstAttribute="centerX" secondItem="4V3-b5-hUC" secondAttribute="centerX" id="ATP-P6-GM2"/>
+                                    <constraint firstItem="rje-L8-QvJ" firstAttribute="leading" secondItem="4V3-b5-hUC" secondAttribute="leading" constant="30.5" id="MNY-Yc-X0f"/>
                                     <constraint firstItem="ZXs-Zk-PBM" firstAttribute="centerX" secondItem="4V3-b5-hUC" secondAttribute="centerX" id="MjD-3s-wCP"/>
+                                    <constraint firstAttribute="trailing" secondItem="rje-L8-QvJ" secondAttribute="trailing" constant="30.5" id="OFE-3Y-4W9"/>
+                                    <constraint firstItem="ZXs-Zk-PBM" firstAttribute="leading" secondItem="4V3-b5-hUC" secondAttribute="leading" constant="31.5" id="Pkv-NX-y39"/>
                                     <constraint firstItem="ZXs-Zk-PBM" firstAttribute="top" secondItem="Oua-1u-jMQ" secondAttribute="bottom" constant="6" id="Qjo-Ki-WT5"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZXs-Zk-PBM" secondAttribute="trailing" constant="31.5" id="TWb-38-mYm"/>
                                     <constraint firstAttribute="height" constant="300" id="U90-77-8GE"/>
                                     <constraint firstItem="rje-L8-QvJ" firstAttribute="top" secondItem="ZXs-Zk-PBM" secondAttribute="bottom" constant="8" symbolic="YES" id="UmA-9K-t5g"/>
                                     <constraint firstItem="Oua-1u-jMQ" firstAttribute="centerX" secondItem="4V3-b5-hUC" secondAttribute="centerX" id="fes-DG-sxk"/>
+                                    <constraint firstItem="Oua-1u-jMQ" firstAttribute="leading" secondItem="4V3-b5-hUC" secondAttribute="leading" constant="31.5" id="xD1-di-Eql"/>
                                 </constraints>
                             </view>
                         </subviews>
