@@ -330,14 +330,15 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background copy" translatesAutoresizingMaskIntoConstraints="NO" id="SWO-Qz-q3E">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </imageView>
-                            <view contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QHR-bq-0xz">
-                                <rect key="frame" x="38" y="333" width="298" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="QHR-bq-0xz">
+                                <rect key="frame" x="38" y="333" width="298" height="39"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="81c-wc-OLG">
-                                        <rect key="frame" x="0.0" y="0.0" width="110" height="34"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="81c-wc-OLG">
+                                        <rect key="frame" x="0.0" y="0.0" width="110" height="39"/>
                                         <color key="backgroundColor" red="0.4941176471" green="0.58823529409999997" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="110" id="6HP-Qw-7Iv"/>
+                                        </constraints>
                                         <attributedString key="attributedText">
                                             <fragment content="Item Shop">
                                                 <attributes>
@@ -349,9 +350,8 @@
                                         </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8gX-MU-Hfd">
-                                        <rect key="frame" x="200" y="0.0" width="90" height="34"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8gX-MU-Hfd">
+                                        <rect key="frame" x="212.5" y="0.0" width="77.5" height="39"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="LuckiestGuy-Regular" family="Luckiest Guy" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -359,6 +359,17 @@
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.41176470590000003" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="8gX-MU-Hfd" secondAttribute="trailing" constant="8" id="0qd-T3-3MJ"/>
+                                    <constraint firstItem="8gX-MU-Hfd" firstAttribute="height" secondItem="QHR-bq-0xz" secondAttribute="height" id="BCC-NC-teH"/>
+                                    <constraint firstAttribute="height" constant="39" id="Ejh-DO-oqq"/>
+                                    <constraint firstItem="8gX-MU-Hfd" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="81c-wc-OLG" secondAttribute="trailing" constant="8" symbolic="YES" id="IJl-VX-21O"/>
+                                    <constraint firstItem="81c-wc-OLG" firstAttribute="height" secondItem="QHR-bq-0xz" secondAttribute="height" id="TD5-a1-g8n"/>
+                                    <constraint firstItem="81c-wc-OLG" firstAttribute="leading" secondItem="QHR-bq-0xz" secondAttribute="leading" id="Wc6-L2-dCE"/>
+                                    <constraint firstItem="81c-wc-OLG" firstAttribute="top" secondItem="8gX-MU-Hfd" secondAttribute="top" id="Zs2-iL-xQD"/>
+                                    <constraint firstItem="81c-wc-OLG" firstAttribute="bottom" secondItem="8gX-MU-Hfd" secondAttribute="bottom" id="gda-KW-rhz"/>
+                                    <constraint firstItem="81c-wc-OLG" firstAttribute="top" secondItem="QHR-bq-0xz" secondAttribute="top" id="tcq-zU-pJZ"/>
+                                </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="TMo-uy-rav">
                                 <rect key="frame" x="38" y="375" width="298" height="292"/>
@@ -422,44 +433,68 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eWe-7m-lE2">
                                 <rect key="frame" x="38" y="74" width="298" height="230"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4de-Gw-dgw">
-                                        <rect key="frame" x="26" y="150" width="119" height="57"/>
-                                        <color key="backgroundColor" red="0.4941176471" green="0.58823529409999997" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="LuckiestGuy-Regular" family="Luckiest Guy" pointSize="19"/>
-                                        <state key="normal" title="Challenges"/>
-                                        <connections>
-                                            <segue destination="AcW-7G-cmo" kind="show" id="wdh-Ca-6XM"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DI7-R8-GnI">
-                                        <rect key="frame" x="26" y="85" width="119" height="57"/>
-                                        <color key="backgroundColor" red="0.4941176471" green="0.58823529409999997" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="LuckiestGuy-Regular" family="Luckiest Guy" pointSize="25"/>
-                                        <state key="normal" title="Weapons"/>
-                                        <connections>
-                                            <segue destination="Cry-sR-Cfw" kind="show" id="oc6-yS-TBo"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DKA-40-ov7">
-                                        <rect key="frame" x="153" y="85" width="119" height="57"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.4941176471" green="0.58823529409999997" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="LuckiestGuy-Regular" family="Luckiest Guy" pointSize="25"/>
-                                        <state key="normal" title="Top 10s"/>
-                                        <connections>
-                                            <segue destination="QlG-Tc-tzb" kind="show" id="O5B-xe-hzT"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S0V-EW-nYG">
-                                        <rect key="frame" x="153" y="150" width="119" height="57"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.4941176471" green="0.58823529409999997" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="LuckiestGuy-Regular" family="Luckiest Guy" pointSize="25"/>
-                                        <state key="normal" title="News"/>
-                                        <connections>
-                                            <segue destination="ZqX-QG-ma1" kind="show" id="sqh-i4-XeD"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="CXF-Yf-Jve">
+                                        <rect key="frame" x="25" y="150" width="248" height="60"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4de-Gw-dgw">
+                                                <rect key="frame" x="0.0" y="0.0" width="120" height="60"/>
+                                                <color key="backgroundColor" red="0.4941176471" green="0.58823529409999997" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="120" id="9oI-nI-A1P"/>
+                                                    <constraint firstAttribute="height" constant="60" id="LRd-1e-Vqh"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="LuckiestGuy-Regular" family="Luckiest Guy" pointSize="19"/>
+                                                <state key="normal" title="Challenges"/>
+                                                <connections>
+                                                    <segue destination="AcW-7G-cmo" kind="show" id="wdh-Ca-6XM"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S0V-EW-nYG">
+                                                <rect key="frame" x="128" y="0.0" width="120" height="60"/>
+                                                <color key="backgroundColor" red="0.4941176471" green="0.58823529409999997" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="LuckiestGuy-Regular" family="Luckiest Guy" pointSize="25"/>
+                                                <state key="normal" title="News"/>
+                                                <connections>
+                                                    <segue destination="ZqX-QG-ma1" kind="show" id="sqh-i4-XeD"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="S0V-EW-nYG" firstAttribute="height" secondItem="4de-Gw-dgw" secondAttribute="height" id="6gv-ee-9WK"/>
+                                            <constraint firstItem="S0V-EW-nYG" firstAttribute="width" secondItem="4de-Gw-dgw" secondAttribute="width" id="neM-gK-lhS"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="mzP-kz-Ld4">
+                                        <rect key="frame" x="25" y="85" width="248" height="60"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DI7-R8-GnI">
+                                                <rect key="frame" x="0.0" y="0.0" width="120" height="60"/>
+                                                <color key="backgroundColor" red="0.4941176471" green="0.58823529409999997" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="120" id="URH-nu-0Vn"/>
+                                                    <constraint firstAttribute="height" constant="60" id="l7N-Zu-9ty"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="LuckiestGuy-Regular" family="Luckiest Guy" pointSize="25"/>
+                                                <state key="normal" title="Weapons"/>
+                                                <connections>
+                                                    <segue destination="Cry-sR-Cfw" kind="show" id="oc6-yS-TBo"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DKA-40-ov7">
+                                                <rect key="frame" x="128" y="0.0" width="120" height="60"/>
+                                                <color key="backgroundColor" red="0.4941176471" green="0.58823529409999997" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="LuckiestGuy-Regular" family="Luckiest Guy" pointSize="25"/>
+                                                <state key="normal" title="Top 10s"/>
+                                                <connections>
+                                                    <segue destination="QlG-Tc-tzb" kind="show" id="O5B-xe-hzT"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="DKA-40-ov7" firstAttribute="width" secondItem="DI7-R8-GnI" secondAttribute="width" id="X9h-7X-ANL"/>
+                                            <constraint firstItem="DKA-40-ov7" firstAttribute="height" secondItem="DI7-R8-GnI" secondAttribute="height" id="oDs-XM-0sR"/>
+                                        </constraints>
+                                    </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="L2F-M0-sE5">
                                         <rect key="frame" x="25" y="20" width="248" height="60"/>
                                         <subviews>
@@ -495,12 +530,19 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.41176470590000003" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="DI7-R8-GnI" firstAttribute="top" secondItem="L2F-M0-sE5" secondAttribute="bottom" constant="28" id="6ko-BH-YEr"/>
+                                    <constraint firstItem="mzP-kz-Ld4" firstAttribute="centerX" secondItem="eWe-7m-lE2" secondAttribute="centerX" id="0x0-Uo-9Qy"/>
+                                    <constraint firstItem="CXF-Yf-Jve" firstAttribute="leading" secondItem="eWe-7m-lE2" secondAttribute="leading" constant="25" id="2gd-iY-7eO"/>
+                                    <constraint firstItem="CXF-Yf-Jve" firstAttribute="top" secondItem="mzP-kz-Ld4" secondAttribute="bottom" constant="5" id="7Pr-LO-adr"/>
+                                    <constraint firstAttribute="trailing" secondItem="CXF-Yf-Jve" secondAttribute="trailing" constant="25" id="Ale-kl-CeB"/>
                                     <constraint firstAttribute="height" constant="230" id="CB9-Lt-lYQ"/>
+                                    <constraint firstItem="L2F-M0-sE5" firstAttribute="leading" secondItem="eWe-7m-lE2" secondAttribute="leading" constant="25" id="DgG-oK-RN3"/>
                                     <constraint firstItem="L2F-M0-sE5" firstAttribute="centerX" secondItem="eWe-7m-lE2" secondAttribute="centerX" id="Go0-oY-4pF"/>
-                                    <constraint firstItem="L2F-M0-sE5" firstAttribute="leading" secondItem="DI7-R8-GnI" secondAttribute="leading" id="boU-NQ-mIc"/>
+                                    <constraint firstItem="CXF-Yf-Jve" firstAttribute="centerX" secondItem="eWe-7m-lE2" secondAttribute="centerX" id="OvQ-Bq-TLi"/>
+                                    <constraint firstItem="mzP-kz-Ld4" firstAttribute="leading" secondItem="eWe-7m-lE2" secondAttribute="leading" constant="25" id="ax1-GT-NUm"/>
+                                    <constraint firstItem="mzP-kz-Ld4" firstAttribute="top" secondItem="L2F-M0-sE5" secondAttribute="bottom" constant="5" id="gKn-bj-KfR"/>
                                     <constraint firstItem="L2F-M0-sE5" firstAttribute="top" secondItem="eWe-7m-lE2" secondAttribute="top" constant="20" id="iFP-r4-YuH"/>
-                                    <constraint firstItem="L2F-M0-sE5" firstAttribute="leading" secondItem="4de-Gw-dgw" secondAttribute="leading" id="swu-B0-XUe"/>
+                                    <constraint firstAttribute="trailing" secondItem="mzP-kz-Ld4" secondAttribute="trailing" constant="25" id="iNN-AC-Q04"/>
+                                    <constraint firstAttribute="trailing" secondItem="L2F-M0-sE5" secondAttribute="trailing" constant="25" id="rjv-gS-nSg"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -510,9 +552,12 @@
                             <constraint firstItem="eWe-7m-lE2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="38" id="B8O-03-4Cs"/>
                             <constraint firstItem="eWe-7m-lE2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="COq-0z-B5Z"/>
                             <constraint firstItem="SWO-Qz-q3E" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Ddx-5h-Gy1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QHR-bq-0xz" secondAttribute="trailing" constant="39" id="HL9-sg-MUY"/>
                             <constraint firstItem="SWO-Qz-q3E" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="QiE-JW-YJA"/>
                             <constraint firstItem="SWO-Qz-q3E" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="asQ-gG-aNs"/>
                             <constraint firstItem="SWO-Qz-q3E" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hho-Xs-ejs"/>
+                            <constraint firstItem="QHR-bq-0xz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="38" id="sf7-2T-g4E"/>
+                            <constraint firstItem="QHR-bq-0xz" firstAttribute="top" secondItem="eWe-7m-lE2" secondAttribute="bottom" constant="29" id="t0U-T3-q3P"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -971,12 +1016,12 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="43G-Hb-7HK">
-                                <rect key="frame" x="0.0" y="10" width="0.0" height="300"/>
+                                <rect key="frame" x="0.0" y="10" width="375" height="657"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SkinTableViewCell" rowHeight="120" id="vkK-XQ-Pbj" customClass="SkinTableViewCell" customModule="fndb_ios" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="0.0" height="120"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vkK-XQ-Pbj" id="BAR-78-eYV">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
