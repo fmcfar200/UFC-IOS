@@ -28,6 +28,8 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.delegate = self
         tableView.dataSource = self
         
+        
+        
         let key = String("a4587bc8429ba5f7e2be4d869fddf5ff")
         let url = URL(string: "https://fortnite-public-api.theapinetwork.com/prod09/br_motd/get")!
         var request = URLRequest(url: url)
@@ -64,6 +66,8 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
         
 
         // Do any additional setup after loading the view.
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 44
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
