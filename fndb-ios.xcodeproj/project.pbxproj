@@ -25,6 +25,7 @@
 		4C9AC20F2176FE4000C9D03C /* LuckiestGuy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4C9AC20E2176FE4000C9D03C /* LuckiestGuy.ttf */; };
 		4CA70D332177CBC00044C4F3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4CA70D322177CBC00044C4F3 /* GoogleService-Info.plist */; };
 		4CB3D556218B7C9E00F4A045 /* StatsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB3D555218B7C9E00F4A045 /* StatsTableViewCell.swift */; };
+		4CC83FC22225948E00801B4E /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC83FC12225948E00801B4E /* PopUpViewController.swift */; };
 		4CEC5B6F21787EDC00B74866 /* Skin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEC5B6E21787EDC00B74866 /* Skin.swift */; };
 		4CEC5B712178978100B74866 /* SkinTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEC5B702178978100B74866 /* SkinTableViewCell.swift */; };
 		4CEC5B732178A5B200B74866 /* SkinTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEC5B722178A5B200B74866 /* SkinTableViewController.swift */; };
@@ -59,6 +60,7 @@
 		4C9AC20E2176FE4000C9D03C /* LuckiestGuy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = LuckiestGuy.ttf; path = "../../../Downloads/luckiest-guy/LuckiestGuy.ttf"; sourceTree = "<group>"; };
 		4CA70D322177CBC00044C4F3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		4CB3D555218B7C9E00F4A045 /* StatsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsTableViewCell.swift; sourceTree = "<group>"; };
+		4CC83FC12225948E00801B4E /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 		4CEC5B6E21787EDC00B74866 /* Skin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skin.swift; sourceTree = "<group>"; };
 		4CEC5B702178978100B74866 /* SkinTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinTableViewCell.swift; sourceTree = "<group>"; };
 		4CEC5B722178A5B200B74866 /* SkinTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinTableViewController.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 				4CFCF5FE217FB83A00F55762 /* WeaponsViewController.swift */,
 				4C53035B21810388009EAD32 /* LeaderboardViewController.swift */,
 				4C7C1A5D218A1283006F57CC /* StatsViewController.swift */,
+				4CC83FC12225948E00801B4E /* PopUpViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				4C363C172177981D00E9A27F /* SkinSelectController.swift in Sources */,
 				4C53035C21810388009EAD32 /* LeaderboardViewController.swift in Sources */,
 				4C653D732188C0CB009AD4C6 /* LeaderboardTableViewCell.swift in Sources */,
+				4CC83FC22225948E00801B4E /* PopUpViewController.swift in Sources */,
 				4CF79F05217A7F4300C9A5C5 /* NewsTableViewCell.swift in Sources */,
 				4CFCF601217FB99500F55762 /* Weapon.swift in Sources */,
 				4CEC5B712178978100B74866 /* SkinTableViewCell.swift in Sources */,

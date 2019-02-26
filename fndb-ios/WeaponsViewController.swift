@@ -84,6 +84,18 @@ class WeaponsViewController: UIViewController, UICollectionViewDelegate, UIColle
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let popUpVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "weaponPopUpController") as! PopUpViewController
+        self.addChild(popUpVC)
+        popUpVC.view.frame = self.view.frame
+        self.view.addSubview(popUpVC.view)
+        popUpVC.didMove(toParent: self)
+        
+        
+        
+    }
+    
 
     /*
     // MARK: - Navigation
