@@ -23,23 +23,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bMv-JW-0cp">
-                                <rect key="frame" x="57" y="217" width="260" height="378"/>
+                                <rect key="frame" x="50" y="219" width="275" height="375"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="rarity" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="brh-JL-TGd">
-                                        <rect key="frame" x="108" y="151" width="45" height="21"/>
+                                        <rect key="frame" x="115" y="151" width="45" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mEr-UQ-cS9">
-                                        <rect key="frame" x="100" y="116" width="61" height="27"/>
+                                        <rect key="frame" x="107" y="116" width="61" height="27"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vq2-sD-CyK">
+                                        <rect key="frame" x="87" y="8" width="100" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.10502714420000001" green="0.36894459709999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -47,6 +51,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="fyA-AO-fHc"/>
                     </view>
+                    <connections>
+                        <outlet property="nameLabel" destination="mEr-UQ-cS9" id="sXA-hW-e8M"/>
+                        <outlet property="rarityLabel" destination="brh-JL-TGd" id="8li-b9-tmt"/>
+                        <outlet property="weaponImage" destination="vq2-sD-CyK" id="hnd-sI-zCh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c25-C4-QWd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -651,7 +660,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Battle_Pass_icon" translatesAutoresizingMaskIntoConstraints="NO" id="ReP-Tw-jCd">
-                                                    <rect key="frame" x="250.33333333333337" y="24.999999999999996" width="49.666666666666657" height="49.666666666666657"/>
+                                                    <rect key="frame" x="250.33333333333334" y="24.999999999999996" width="49.666666666666657" height="49.666666666666657"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="ReP-Tw-jCd" secondAttribute="height" multiplier="1:1" id="UVd-k6-Vl2"/>
                                                     </constraints>

@@ -86,11 +86,22 @@ class WeaponsViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+        let weapon = self.weaponCollection[indexPath.row]
         let popUpVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "weaponPopUpController") as! PopUpViewController
         self.addChild(popUpVC)
         popUpVC.view.frame = self.view.frame
         self.view.addSubview(popUpVC.view)
         popUpVC.didMove(toParent: self)
+        
+        popUpVC.nameLabel.text = weapon.name
+        popUpVC.rarityLabel.text = weapon.rarity
+        downloadImage(urlstr: (weapon.images?.background)!, imageView: popUpVC.weaponImage)
+        
+        
+        
+        
+        
+        
         
         
         
