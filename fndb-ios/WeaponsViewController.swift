@@ -49,7 +49,7 @@ class WeaponsViewController: UIViewController, UICollectionViewDelegate, UIColle
                 }
                 
                 let responseString = String(data: data, encoding: .utf8)
-                //print("responseString = \(String(describing: responseString))")
+                print("responseString = \(String(describing: responseString))")
                 do {
                     let weaponResponse = try JSONDecoder().decode(WeaponsResponse.self, from: data)
                     self.weaponCollection = weaponResponse.weapons!
@@ -96,6 +96,8 @@ class WeaponsViewController: UIViewController, UICollectionViewDelegate, UIColle
         popUpVC.nameLabel.text = weapon.name
         popUpVC.rarityLabel.text = weapon.rarity
         downloadImage(urlstr: (weapon.images?.background)!, imageView: popUpVC.weaponImage)
+        
+        
         
         
         

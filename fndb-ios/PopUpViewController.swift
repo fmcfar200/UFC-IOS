@@ -13,6 +13,9 @@ class PopUpViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var rarityLabel: UILabel!
     @IBOutlet weak var weaponImage: UIImageView!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
