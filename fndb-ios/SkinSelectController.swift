@@ -52,11 +52,11 @@ class SkinSelectController: UIViewController {
             
         case 3:
             searchType = SearchType.SEASONAL
+            //performSegue(withIdentifier: "segue", sender: self)
             
         default:
             searchType = SearchType.PROMO
         }
-        performSegue(withIdentifier: "segue", sender: self)
         
         
     }
@@ -70,18 +70,23 @@ class SkinSelectController: UIViewController {
         case 2:
             seasonNo = tag
             searchType = SearchType.BP
+            performSegue(withIdentifier: "segue", sender: self)
         case 3:
             seasonNo = tag
             searchType = SearchType.BP
+            performSegue(withIdentifier: "segue", sender: self)
         case 4:
             seasonNo = tag
             searchType = SearchType.BP
+            performSegue(withIdentifier: "segue", sender: self)
         case 5:
             seasonNo = tag
             searchType = SearchType.BP
+            performSegue(withIdentifier: "segue", sender: self)
         case 6:
             seasonNo = tag
             searchType = SearchType.BP
+            performSegue(withIdentifier: "segue", sender: self)
         case 7:
             seasonNo = 0
             searchType = SearchType.UNCOMMON
@@ -94,6 +99,14 @@ class SkinSelectController: UIViewController {
         case 10:
             seasonNo = 0
             searchType = SearchType.LEGENDARY
+        case 11:
+            seasonNo = 7
+            searchType = SearchType.BP
+            performSegue(withIdentifier: "segue", sender: self)
+        case 12:
+            seasonNo = 8
+            searchType = SearchType.BP
+            performSegue(withIdentifier: "segue", sender: self)
             
         
         
@@ -102,7 +115,7 @@ class SkinSelectController: UIViewController {
             searchType = SearchType.BP
         }
         
-        performSegue(withIdentifier: "segue", sender: self)
+        
 
     }
     
