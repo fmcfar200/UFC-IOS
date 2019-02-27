@@ -17,8 +17,7 @@ struct WeaponsResponse:Decodable{
 
 class WeaponsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
-    
-    
+   
     var weaponCollection = [Weapon]()
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -96,6 +95,29 @@ class WeaponsViewController: UIViewController, UICollectionViewDelegate, UIColle
         popUpVC.nameLabel.text = weapon.name
         popUpVC.rarityLabel.text = weapon.rarity
         downloadImage(urlstr: (weapon.images?.background)!, imageView: popUpVC.weaponImage)
+        
+        let damageString1 = "Body: " + (weapon.stats?.damage?.body)!
+        let damageString2 = "Head: " + (weapon.stats?.damage?.head)!
+        
+        let damage = theStat(name: "Damage", value: damageString1 + " " + damageString2)
+        let dps = theStat(name:"DPS", value: weapon.stats!.dps)
+        let fireRate = theStat(name:"Fire Rate", value: weapon.stats!.firerate)
+        let reloadTime = theStat(name:"Reload Time", value: weapon.stats!.magazine?.reload)
+        let magSize = theStat(name:"Magazine Size", value: weapon.stats!.magazine?.size)
+        let ammoCost = theStat(name:"Ammo Cost", value: weapon.stats!.ammocost)
+        
+        popUpVC.statCollection.removeAll()
+        
+            popUpVC.statCollection.append(damage)
+            popUpVC.statCollection.append(dps)
+            popUpVC.statCollection.append(fireRate)
+            popUpVC.statCollection.append(reloadTime)
+            popUpVC.statCollection.append(magSize)
+            popUpVC.statCollection.append(ammoCost)
+            popUpVC.tableView.reloadData()
+        
+        
+       
         
         
         

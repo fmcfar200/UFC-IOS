@@ -33,6 +33,7 @@
 		4CF79EFE217A7B0400C9A5C5 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF79EFD217A7B0400C9A5C5 /* NewsViewController.swift */; };
 		4CF79F03217A7CF800C9A5C5 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF79F02217A7CF800C9A5C5 /* News.swift */; };
 		4CF79F05217A7F4300C9A5C5 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF79F04217A7F4300C9A5C5 /* NewsTableViewCell.swift */; };
+		4CF85DA42226CA74005408FA /* WeaponStatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF85DA32226CA74005408FA /* WeaponStatTableViewCell.swift */; };
 		4CFCF5FF217FB83A00F55762 /* WeaponsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFCF5FE217FB83A00F55762 /* WeaponsViewController.swift */; };
 		4CFCF601217FB99500F55762 /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFCF600217FB99500F55762 /* Weapon.swift */; };
 		4CFCF603217FC01C00F55762 /* WeaponCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFCF602217FC01C00F55762 /* WeaponCollectionViewCell.swift */; };
@@ -68,6 +69,7 @@
 		4CF79EFD217A7B0400C9A5C5 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		4CF79F02217A7CF800C9A5C5 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		4CF79F04217A7F4300C9A5C5 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
+		4CF85DA32226CA74005408FA /* WeaponStatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponStatTableViewCell.swift; sourceTree = "<group>"; };
 		4CFCF5FE217FB83A00F55762 /* WeaponsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponsViewController.swift; sourceTree = "<group>"; };
 		4CFCF600217FB99500F55762 /* Weapon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weapon.swift; sourceTree = "<group>"; };
 		4CFCF602217FC01C00F55762 /* WeaponCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				4CFF56672182398500D7A069 /* ShopCollectionViewCell.swift */,
 				4C653D722188C0CB009AD4C6 /* LeaderboardTableViewCell.swift */,
 				4CB3D555218B7C9E00F4A045 /* StatsTableViewCell.swift */,
+				4CF85DA32226CA74005408FA /* WeaponStatTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				4C9AC1FB2176F65B00C9D03C /* ViewController.swift in Sources */,
 				4C363C172177981D00E9A27F /* SkinSelectController.swift in Sources */,
 				4C53035C21810388009EAD32 /* LeaderboardViewController.swift in Sources */,
+				4CF85DA42226CA74005408FA /* WeaponStatTableViewCell.swift in Sources */,
 				4C653D732188C0CB009AD4C6 /* LeaderboardTableViewCell.swift in Sources */,
 				4CC83FC22225948E00801B4E /* PopUpViewController.swift in Sources */,
 				4CF79F05217A7F4300C9A5C5 /* NewsTableViewCell.swift in Sources */,
