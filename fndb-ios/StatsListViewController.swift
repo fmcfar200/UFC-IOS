@@ -29,9 +29,9 @@ class StatsListViewController: UIViewController, UITableViewDataSource, UITableV
     
     var collection: [String:String] = [:]
     
-    var platform:String = "pc"
-    var type:String = "p2"
-    var username:String = ""
+    var thePlatform:String = "pc"
+    var theType:String = "p2"
+    var theUsername:String = ""
     var searched:Bool = false
     
     override func viewDidLoad() {
@@ -39,6 +39,8 @@ class StatsListViewController: UIViewController, UITableViewDataSource, UITableV
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        getStats(username: theUsername, type: theType, platform: thePlatform)
 
         // Do any additional setup after loading the view.
     }
@@ -177,32 +179,32 @@ class StatsListViewController: UIViewController, UITableViewDataSource, UITableV
         {
             switch tag {
             case 0:
-                type = "lifeTimeStats"
+                theType = "lifeTimeStats"
             case 1:
-                type = "p2"
+                theType = "p2"
             case 2:
-                type = "p10"
+                theType = "p10"
             case 3:
-                type = "p9"
+                theType = "p9"
             default:
-                type = "p2"
+                theType = "p2"
             }
         }
         else{
             
             switch tag {
             case 0:
-                type = "lifeTimeStats"
+                theType = "lifeTimeStats"
             case 1:
-                type = "p2"
+                theType = "p2"
             case 2:
-                type = "p10"
+                theType = "p10"
             case 3:
-                type = "p9"
+                theType = "p9"
             default:
-                type = "p2"
+                theType = "p2"
             }
-            getStats(username: username, type: type, platform: platform)
+            getStats(username: theUsername, type: theType, platform: thePlatform)
             
             
         }
