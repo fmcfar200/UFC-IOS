@@ -86,7 +86,6 @@ class ChallengeViewController: UIViewController, UITableViewDelegate, UITableVie
             }
             task.resume()
         }
-        
         // Do any additional setup after loading the view.
     }
     
