@@ -1,38 +1,33 @@
 //
-//  StatsViewController.swift
+//  StatsListViewController.swift
 //  fndb-ios
 //
-//  Created by fraser mcfarlane on 31/10/2018.
-//  Copyright © 2018 P-Flow Studios. All rights reserved.
+//  Created by fraser mcfarlane on 27/02/2019.
+//  Copyright © 2019 P-Flow Studios. All rights reserved.
 //
 
 import UIKit
 
-class StatsViewController: UIViewController, UITableViewDelegate,UITableViewDataSource {
+class StatsListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    
     struct Stat{
         var key: String!
         var value: String!
     }
     
-    
-    @IBOutlet weak var textEnter: UITextField!
-    @IBOutlet weak var submitButton: UIButton!
+    var statArray = [Stat]()
+
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var searchView: UIView!
+    @IBOutlet weak var winsLabel: UILabel!
+    @IBOutlet weak var killsLabel: UILabel!
+    @IBOutlet weak var matchesLabel: UILabel!
+    
     
     var killsString:String = ""
     var winsString:String = ""
     var matchesString:String = ""
-    @IBOutlet weak var winsLabel: UILabel!
-    @IBOutlet weak var killsLabel: UILabel!
-    @IBOutlet weak var matchesLabel: UILabel!
-    @IBOutlet weak var boxViews: UIView!
-    
     
     var collection: [String:String] = [:]
-    var statArray = [Stat]()
     
     var platform:String = "pc"
     var type:String = "p2"
@@ -44,11 +39,8 @@ class StatsViewController: UIViewController, UITableViewDelegate,UITableViewData
         
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.isHidden = true
 
         // Do any additional setup after loading the view.
-       
-        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -77,7 +69,7 @@ class StatsViewController: UIViewController, UITableViewDelegate,UITableViewData
         
         let originalURL = "https://api.fortnitetracker.com/v1/profile/"+platform+"/"+username
         let urlString = originalURL.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
-
+        
         let url = URL(string: urlString)!
         var request = URLRequest(url: url)
         request.setValue(key, forHTTPHeaderField: "TRN-Api-Key")
@@ -162,12 +154,7 @@ class StatsViewController: UIViewController, UITableViewDelegate,UITableViewData
                         self.killsLabel.text = self.killsString
                         self.matchesLabel.text = self.matchesString
                         
-                        self.tableView.isHidden = false
-                        self.boxViews.isHidden = false
-                        self.searchView.isHidden = true
-                        
-                        self.searched = true
-                    }
+                                            }
                     
                     
                     
@@ -216,33 +203,20 @@ class StatsViewController: UIViewController, UITableViewDelegate,UITableViewData
                 type = "p2"
             }
             getStats(username: username, type: type, platform: platform)
-
+            
             
         }
-       
-        
-        print (type)
-    }
-    @IBAction func platformButtonPress(_ sender: UIButton) {
-        let tag = sender.tag
-        switch tag {
-        case 0:
-            platform = "pc"
-        case 1:
-            platform = "xbox"
-        case 2:
-            platform = "psn"
-        default:
-            platform = "pc"
-        }
-        
-        print(platform)
-    }
     
-    @IBAction func submiteButtonPress(_ sender: UIButton) {
-        
-        username = textEnter.text!
-        getStats(username: username, type: type, platform: platform)
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
     }
-    
+    */
+
+}
 }
