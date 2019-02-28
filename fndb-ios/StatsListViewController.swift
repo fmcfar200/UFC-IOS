@@ -175,23 +175,6 @@ class StatsListViewController: UIViewController, UITableViewDataSource, UITableV
     
     @IBAction func typeButtonPress(_ sender: UIButton) {
         let tag = sender.tag
-        if (!searched)
-        {
-            switch tag {
-            case 0:
-                theType = "lifeTimeStats"
-            case 1:
-                theType = "p2"
-            case 2:
-                theType = "p10"
-            case 3:
-                theType = "p9"
-            default:
-                theType = "p2"
-            }
-        }
-        else{
-            
             switch tag {
             case 0:
                 theType = "lifeTimeStats"
@@ -221,4 +204,4 @@ class StatsListViewController: UIViewController, UITableViewDataSource, UITableV
     */
 
 }
-}
+

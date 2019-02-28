@@ -49,10 +49,11 @@ class SkinSelectController: UIViewController {
         switch tag {
         case 2:
             searchType = SearchType.PROMO
+             performSegue(withIdentifier: "segue", sender: self)
             
         case 3:
             searchType = SearchType.SEASONAL
-            //performSegue(withIdentifier: "segue", sender: self)
+            performSegue(withIdentifier: "segue", sender: self)
             
         default:
             searchType = SearchType.PROMO
