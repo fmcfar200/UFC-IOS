@@ -1628,7 +1628,6 @@
                                         <state key="normal" title="Promo Skins"/>
                                         <connections>
                                             <action selector="toSkinPress:" destination="TQM-L3-CjU" eventType="touchUpInside" id="des-Mo-aAZ"/>
-                                            <segue destination="hMu-Qb-HzB" kind="show" identifier="segue" id="4uA-nM-gFb"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TQB-PC-yvC">
@@ -1679,6 +1678,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="f2N-4H-lZG"/>
                     </view>
+                    <connections>
+                        <segue destination="hMu-Qb-HzB" kind="show" identifier="segue" id="A6b-Qb-spR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XwX-x2-mVe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1822,6 +1824,6 @@
         <image name="background_original_cut" width="684" height="1015"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="4uA-nM-gFb"/>
+        <segue reference="A6b-Qb-spR"/>
     </inferredMetricsTieBreakers>
 </document>

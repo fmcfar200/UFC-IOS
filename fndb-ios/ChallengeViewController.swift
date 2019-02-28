@@ -59,6 +59,7 @@ class ChallengeViewController: UIViewController, UITableViewDelegate, UITableVie
                 }
                 
                 let responseString = String(data: data, encoding: .utf8)
+                
                 //let json = try? JSONSerialization.jsonObject(with: data, options: [])
                 do {
                     let challengeResponse = try JSONDecoder().decode(ChallengeResponse.self, from: data)
