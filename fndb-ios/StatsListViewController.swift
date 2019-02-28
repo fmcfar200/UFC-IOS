@@ -29,6 +29,7 @@ class StatsListViewController: UIViewController, UITableViewDataSource, UITableV
     
     var collection: [String:String] = [:]
     
+    
     var thePlatform:String = "pc"
     var theType:String = "p2"
     var theUsername:String = ""
@@ -40,8 +41,10 @@ class StatsListViewController: UIViewController, UITableViewDataSource, UITableV
         tableView.delegate = self
         tableView.dataSource = self
         
+        
         getStats(username: theUsername, type: theType, platform: thePlatform)
 
+        self.navigationItem.title = theUsername
         // Do any additional setup after loading the view.
     }
     
@@ -95,8 +98,28 @@ class StatsListViewController: UIViewController, UITableViewDataSource, UITableV
                     if (type != "lifeTimeStats")
                     {
                         let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [String: AnyObject]
+                        if (json!["error"] != nil)
+                        {
+                            print("error")
+                            self.showalertNotFound(title: "Player Not Found", message: "Unable to find username. Make sure you have entered the correct username and platform.")
+                            return
+                        }
+                        
+                        if (json!["stats"] == nil)
+                        {
+                            print("error")
+                            self.showalertReset(title: "Stats Not Found", message: "These statistics are unavailable for this player.")
+                            return
+                        }
                         let stats = json!["stats"]! as! [String:AnyObject]
+                        
                         let soloStats = stats[type]
+                        if (soloStats == nil)
+                        {
+                            print("error")
+                            self.showalertReset(title: "Stats Not Found", message: "These statistics are unavailable for this player.")
+                            return
+                        }
                         
                         let wins = soloStats!["top1"] as! [String:AnyObject]
                         let kills = soloStats!["kills"] as! [String:AnyObject]
@@ -106,8 +129,7 @@ class StatsListViewController: UIViewController, UITableViewDataSource, UITableV
                         let kpg = soloStats!["kpg"] as! [String:AnyObject]
                         let scorePerMatch = soloStats!["scorePerMatch"] as! [String:AnyObject]
                         let score = soloStats!["score"] as! [String:AnyObject]
-                        
-                        
+                    
                         self.collection.updateValue(wins["value"] as! String, forKey: wins["label"] as! String)
                         self.collection.updateValue(kills["value"] as! String, forKey: kills["label"] as! String)
                         self.collection.updateValue(matches["value"] as! String, forKey: matches["label"] as! String)
@@ -128,6 +150,13 @@ class StatsListViewController: UIViewController, UITableViewDataSource, UITableV
                     }
                     else{
                         let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [String: AnyObject]
+                        if (json!["error"] != nil)
+                        {
+                            print("error")
+                            self.showalertNotFound(title: "Player Not Found", message: "Unable to find username. Make sure you have entered the correct username and platform.")
+                            return
+                            
+                        }
                         let stats = json![type]! as! [[String:AnyObject]]
                         for stat in stats{
                             let key = stat["key"] as? String
@@ -155,6 +184,8 @@ class StatsListViewController: UIViewController, UITableViewDataSource, UITableV
                         self.winsLabel.text = self.winsString
                         self.killsLabel.text = self.killsString
                         self.matchesLabel.text = self.matchesString
+
+
                         
                                             }
                     
@@ -191,6 +222,29 @@ class StatsListViewController: UIViewController, UITableViewDataSource, UITableV
             
             
         }
+    
+    func showalertNotFound(title:String, message:String)
+    {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { (action) in
+            self.navigationController?.popViewController(animated: true)
+        }))
+        self.present(alert,animated: true, completion: nil)
+    }
+    func showalertReset(title:String, message:String)
+    {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { (action) in
+            
+            alert.dismiss(animated: true
+                , completion: {
+                    self.getStats(username: self.theUsername, type: "lifeTimeStats", platform: self.thePlatform)
+            })
+        }))
+        self.present(alert,animated: true, completion: nil)
+    }
     
 
     /*

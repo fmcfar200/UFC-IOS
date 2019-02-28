@@ -16,6 +16,9 @@ class LeaderboardViewController: UIViewController, UITableViewDelegate, UITableV
         let entries:[Leaderboard]
     }
     
+
+    
+    
     var leaderboardCollectionKills = [Leaderboard]()
     var leaderboardCollectionWins = [Leaderboard]()
     var leaderboardCollectionMins = [Leaderboard]()
@@ -24,7 +27,12 @@ class LeaderboardViewController: UIViewController, UITableViewDelegate, UITableV
     let killsSearch = "kills"
     let winsSearch = "wins"
     let scoreSearch = "score"
-    let minsSearch = "mins"
+    let minsSearch = "minutes"
+    var theSearch:String = ""
+    
+    var selectedUsername = ""
+    var selectedPlatform = ""
+    
     @IBOutlet weak var headerLabel: UILabel!
     
     @IBOutlet weak var tableView: UITableView!
@@ -47,23 +55,27 @@ class LeaderboardViewController: UIViewController, UITableViewDelegate, UITableV
         case 0:
             print("Kills")
             getTop10(type: killsSearch)
+            theSearch = killsSearch
             tableView.reloadData()
             headerLabel.text = "Kills"
         case 1:
             print("Wins")
             getTop10(type: winsSearch)
+            theSearch = winsSearch
             tableView.reloadData()
             headerLabel.text = "Wins"
 
         case 2:
             print("Score")
             getTop10(type: scoreSearch)
+            theSearch = scoreSearch
             tableView.reloadData()
             headerLabel.text = "Score"
 
         case 3:
             print("Mins")
             getTop10(type: minsSearch)
+            theSearch = minsSearch
             tableView.reloadData()
             headerLabel.text = "Minutes"
 
@@ -134,10 +146,52 @@ class LeaderboardViewController: UIViewController, UITableViewDelegate, UITableV
         
         let item = theLBCollection[indexPath.row]
         cell.nameLabel.text = item.username
-        cell.valueLabel.text = item.kills
+        
+        if (theSearch == killsSearch)
+        {
+            cell.valueLabel.text = item.kills
+
+        }
+        else if (theSearch == winsSearch)
+        {
+            cell.valueLabel.text = item.wins
+        }
+        else if (theSearch == scoreSearch)
+        {
+            cell.valueLabel.text = item.score
+        }
+        else{
+            cell.valueLabel.text = item.minutes
+
+        }
         
         cell.layoutSubviews()
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if (theLBCollection[indexPath.row].username != nil)
+        {
+            selectedUsername = theLBCollection[indexPath.row].username!
+            selectedPlatform = theLBCollection[indexPath.row].platform!
+            
+            if(selectedPlatform == "xb1")
+            {
+                selectedPlatform = "xbox"
+            }
+            performSegue(withIdentifier: "segue", sender: self)
+
+        }
+        
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "segue" else {return}
+        let statsController = segue.destination as! StatsListViewController
+        statsController.thePlatform = selectedPlatform
+        statsController.theUsername = selectedUsername
     }
     
 

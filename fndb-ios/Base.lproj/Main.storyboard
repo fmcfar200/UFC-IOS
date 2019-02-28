@@ -1157,6 +1157,7 @@
                     <connections>
                         <outlet property="headerLabel" destination="c2Y-so-qZ0" id="fgM-VG-L89"/>
                         <outlet property="tableView" destination="AzS-3h-SjY" id="scD-ZJ-Znq"/>
+                        <segue destination="DHk-Am-qyY" kind="show" identifier="segue" id="ELc-2l-SEo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rtb-iV-vMs" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1845,5 +1846,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="EEM-oq-bcA"/>
+        <segue reference="ELc-2l-SEo"/>
     </inferredMetricsTieBreakers>
 </document>
