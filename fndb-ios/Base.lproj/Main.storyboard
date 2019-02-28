@@ -338,17 +338,17 @@
                                         </constraints>
                                         <viewLayoutGuide key="safeArea" id="Wrv-TN-O8E"/>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2u4-aU-HiB">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bKy-1U-tSf">
                                         <rect key="frame" x="234" y="0.0" width="109" height="122"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Matches Played" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SJS-9G-vaZ">
-                                                <rect key="frame" x="0.0" y="73" width="109" height="41"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Matches" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ANL-ob-Osp">
+                                                <rect key="frame" x="0.0" y="87" width="109" height="19"/>
                                                 <fontDescription key="fontDescription" name="LuckiestGuy-Regular" family="Luckiest Guy" pointSize="19"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7jN-Cu-cI5">
-                                                <rect key="frame" x="0.0" y="32" width="109" height="25"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="1000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wrn-q8-Pwx">
+                                                <rect key="frame" x="0.0" y="16" width="109" height="55"/>
                                                 <fontDescription key="fontDescription" name="LuckiestGuy-Regular" family="Luckiest Guy" pointSize="25"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -356,15 +356,15 @@
                                         </subviews>
                                         <color key="backgroundColor" red="0.10502714420000001" green="0.36894459709999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstItem="7jN-Cu-cI5" firstAttribute="top" secondItem="zXa-Ym-6Jp" secondAttribute="top" constant="32" id="MsZ-dF-b0q"/>
-                                            <constraint firstItem="SJS-9G-vaZ" firstAttribute="top" secondItem="7jN-Cu-cI5" secondAttribute="bottom" constant="16" id="V0R-IQ-BlS"/>
-                                            <constraint firstItem="7jN-Cu-cI5" firstAttribute="leading" secondItem="zXa-Ym-6Jp" secondAttribute="leading" id="Z7z-9l-tSi"/>
-                                            <constraint firstItem="zXa-Ym-6Jp" firstAttribute="trailing" secondItem="SJS-9G-vaZ" secondAttribute="trailing" id="f25-xK-TmN"/>
-                                            <constraint firstItem="zXa-Ym-6Jp" firstAttribute="trailing" secondItem="7jN-Cu-cI5" secondAttribute="trailing" id="hf9-AG-ny4"/>
-                                            <constraint firstItem="zXa-Ym-6Jp" firstAttribute="bottom" secondItem="SJS-9G-vaZ" secondAttribute="bottom" constant="8" id="nA4-Xl-ikk"/>
-                                            <constraint firstItem="SJS-9G-vaZ" firstAttribute="leading" secondItem="zXa-Ym-6Jp" secondAttribute="leading" id="yhb-zb-IGw"/>
+                                            <constraint firstItem="poJ-f7-jPP" firstAttribute="bottom" secondItem="ANL-ob-Osp" secondAttribute="bottom" constant="16" id="5lS-2y-GVd"/>
+                                            <constraint firstItem="ANL-ob-Osp" firstAttribute="top" secondItem="Wrn-q8-Pwx" secondAttribute="bottom" constant="16" id="Bx1-tc-SJZ"/>
+                                            <constraint firstItem="poJ-f7-jPP" firstAttribute="trailing" secondItem="ANL-ob-Osp" secondAttribute="trailing" id="SjC-pk-sqE"/>
+                                            <constraint firstItem="Wrn-q8-Pwx" firstAttribute="top" secondItem="poJ-f7-jPP" secondAttribute="top" constant="16" id="V4e-u0-m2S"/>
+                                            <constraint firstItem="Wrn-q8-Pwx" firstAttribute="leading" secondItem="poJ-f7-jPP" secondAttribute="leading" id="WeM-eM-Djb"/>
+                                            <constraint firstItem="ANL-ob-Osp" firstAttribute="leading" secondItem="poJ-f7-jPP" secondAttribute="leading" id="lgO-bh-HAj"/>
+                                            <constraint firstItem="poJ-f7-jPP" firstAttribute="trailing" secondItem="Wrn-q8-Pwx" secondAttribute="trailing" id="ptg-2h-4YZ"/>
                                         </constraints>
-                                        <viewLayoutGuide key="safeArea" id="zXa-Ym-6Jp"/>
+                                        <viewLayoutGuide key="safeArea" id="poJ-f7-jPP"/>
                                     </view>
                                 </subviews>
                             </stackView>
@@ -435,14 +435,14 @@
                     </view>
                     <connections>
                         <outlet property="killsLabel" destination="HK1-qd-jcV" id="O2P-Iy-7PD"/>
-                        <outlet property="matchesLabel" destination="7jN-Cu-cI5" id="tvr-FT-Pc2"/>
+                        <outlet property="matchesLabel" destination="Wrn-q8-Pwx" id="w3S-vW-4a4"/>
                         <outlet property="tableView" destination="KxV-An-zzn" id="6Lv-9D-wFc"/>
                         <outlet property="winsLabel" destination="3Zu-Vf-zaf" id="TwE-QF-QpC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xsN-OX-Tau" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="41" y="-1652"/>
+            <point key="canvasLocation" x="40.799999999999997" y="-1652.2167487684731"/>
         </scene>
         <!--Stats Search View Controller-->
         <scene sceneID="DtR-2f-sBg">
@@ -684,30 +684,50 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="90" height="120"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5vW-jK-qHn">
-                                                    <rect key="frame" x="0.0" y="72" width="90" height="20"/>
+                                                    <rect key="frame" x="0.0" y="75" width="90" height="17"/>
                                                     <fontDescription key="fontDescription" name="LuckiestGuy-Regular" family="Luckiest Guy" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aM3-5A-zgg">
-                                                    <rect key="frame" x="0.0" y="103" width="90" height="17"/>
-                                                    <color key="backgroundColor" red="0.10502714420000001" green="0.36894459709999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <fontDescription key="fontDescription" name="LuckiestGuy-Regular" family="Luckiest Guy" pointSize="17"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qPH-9d-gOE">
+                                                    <rect key="frame" x="0.0" y="105" width="90" height="15"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon_VBucks" translatesAutoresizingMaskIntoConstraints="NO" id="sND-67-vvr">
+                                                            <rect key="frame" x="8" y="0.0" width="15" height="15"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="15" id="GDq-TY-fYf"/>
+                                                                <constraint firstAttribute="width" constant="15" id="NFO-4X-BTd"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aM3-5A-zgg">
+                                                            <rect key="frame" x="33" y="1" width="30" height="13"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <fontDescription key="fontDescription" name="LuckiestGuy-Regular" family="Luckiest Guy" pointSize="13"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.0" green="0.41176470590000003" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="sND-67-vvr" secondAttribute="bottom" id="2eB-H1-Bd7"/>
+                                                        <constraint firstItem="sND-67-vvr" firstAttribute="top" secondItem="qPH-9d-gOE" secondAttribute="top" id="9Ry-SZ-fKW"/>
+                                                        <constraint firstItem="sND-67-vvr" firstAttribute="leading" secondItem="qPH-9d-gOE" secondAttribute="leading" constant="8" id="OzA-hW-FKz"/>
+                                                        <constraint firstItem="aM3-5A-zgg" firstAttribute="leading" secondItem="sND-67-vvr" secondAttribute="trailing" constant="10" id="P3E-h7-eBU"/>
+                                                        <constraint firstItem="aM3-5A-zgg" firstAttribute="top" secondItem="qPH-9d-gOE" secondAttribute="top" constant="1" id="hKO-5D-1ea"/>
+                                                        <constraint firstAttribute="bottom" secondItem="aM3-5A-zgg" secondAttribute="bottom" constant="1" id="tmU-b5-90x"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                         </view>
                                         <constraints>
                                             <constraint firstItem="sYq-7z-lh8" firstAttribute="leading" secondItem="KEi-eS-uMw" secondAttribute="leading" id="2CE-Ul-GqL"/>
                                             <constraint firstItem="sYq-7z-lh8" firstAttribute="trailing" secondItem="5vW-jK-qHn" secondAttribute="trailing" id="7kD-Ft-8kb"/>
+                                            <constraint firstAttribute="trailing" secondItem="qPH-9d-gOE" secondAttribute="trailing" id="9lR-ro-P9w"/>
                                             <constraint firstAttribute="bottomMargin" secondItem="sYq-7z-lh8" secondAttribute="bottom" constant="-8" id="NYf-1p-fM0"/>
-                                            <constraint firstAttribute="bottom" secondItem="aM3-5A-zgg" secondAttribute="bottom" id="R2F-KU-nF3"/>
-                                            <constraint firstItem="aM3-5A-zgg" firstAttribute="top" secondItem="sYq-7z-lh8" secondAttribute="bottom" constant="-17" id="WUB-gT-huO"/>
                                             <constraint firstAttribute="trailing" secondItem="sYq-7z-lh8" secondAttribute="trailing" id="WcO-kR-cau"/>
                                             <constraint firstItem="sYq-7z-lh8" firstAttribute="leading" secondItem="5vW-jK-qHn" secondAttribute="leading" id="fzo-rk-51P"/>
-                                            <constraint firstItem="5vW-jK-qHn" firstAttribute="trailing" secondItem="aM3-5A-zgg" secondAttribute="trailing" id="iBs-df-1JC"/>
-                                            <constraint firstItem="5vW-jK-qHn" firstAttribute="leading" secondItem="aM3-5A-zgg" secondAttribute="leading" id="oXr-70-Hec"/>
+                                            <constraint firstAttribute="bottom" secondItem="qPH-9d-gOE" secondAttribute="bottom" id="gqG-qh-O6t"/>
+                                            <constraint firstItem="qPH-9d-gOE" firstAttribute="leading" secondItem="KEi-eS-uMw" secondAttribute="leading" id="qLp-u2-HtY"/>
                                             <constraint firstItem="sYq-7z-lh8" firstAttribute="top" secondItem="KEi-eS-uMw" secondAttribute="top" id="uuL-zt-5xr"/>
                                             <constraint firstItem="sYq-7z-lh8" firstAttribute="bottom" secondItem="5vW-jK-qHn" secondAttribute="bottom" constant="28" id="vyr-49-18v"/>
                                         </constraints>

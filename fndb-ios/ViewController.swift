@@ -113,6 +113,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         cell.nameLabel.text = item.name
         cell.priceLabel.text = item.cost
         downloadImage(urlstr: (item.item?.images?.background)!, imageView: cell.imageView)
+        cell.nameLabel.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         
         
         cell.layoutSubviews()
