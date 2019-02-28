@@ -4,6 +4,7 @@
 target 'fndb-ios' do
   pod 'Firebase'
   pod 'Firebase/Database'
+  pod 'Google-Mobile-Ads-SDK'
 
   use_frameworks!
 

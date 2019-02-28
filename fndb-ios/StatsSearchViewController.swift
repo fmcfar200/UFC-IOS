@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
-class StatsSearchViewController: UIViewController {
+class StatsSearchViewController: UIViewController, GADBannerViewDelegate {
     
     
+    @IBOutlet weak var bannerView: GADBannerView!
     @IBOutlet weak var textEnter: UITextField!
     var platform:String = "pc"
     var type:String = "p2"
@@ -22,7 +24,17 @@ class StatsSearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let adRequest = GADRequest()
+        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        
+        bannerView.rootViewController = self
+        bannerView.delegate = self
+        
+        bannerView.load(adRequest)
+        
+        
         textEnter.autocorrectionType = .no
+        textEnter.returnKeyType = .done
     }
     
     

@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, GADBannerViewDelegate {
 
+    @IBOutlet weak var bannerView: GADBannerView!
     @IBOutlet weak var mainImage: UIImageView!
     @IBOutlet weak var costImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -19,6 +21,15 @@ class DetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let adRequest = GADRequest()
+        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        
+        bannerView.rootViewController = self
+        bannerView.delegate = self
+        
+        bannerView.load(adRequest)
+        
         
         nameLabel.text = selectedSkin.name
         costLabel.text = selectedSkin.cost

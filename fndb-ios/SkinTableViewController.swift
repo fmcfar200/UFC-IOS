@@ -9,14 +9,16 @@
 import UIKit
 import Firebase
 import FirebaseDatabase
+import GoogleMobileAds
 
 var theSearchType = SearchType.EPIC
 var selectedSkin = Skin()
 
 
-class SkinTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class SkinTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, GADBannerViewDelegate {
     
     
+    @IBOutlet weak var bannerView: GADBannerView!
     @IBOutlet weak var tableView: UITableView!
     
     var skinCollection = [Skin]()
@@ -28,6 +30,15 @@ class SkinTableViewController: UIViewController, UITableViewDelegate, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let adRequest = GADRequest()
+        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        
+        bannerView.rootViewController = self
+        bannerView.delegate = self
+        
+        bannerView.load(adRequest)
+        
         
         print(seasonNo, theSearchType)
         

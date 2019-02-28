@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 struct WeaponsResponse:Decodable{
     let rarity:String?
@@ -15,14 +16,24 @@ struct WeaponsResponse:Decodable{
     let weapons:[Weapon]?
 }
 
-class WeaponsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class WeaponsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, GADBannerViewDelegate {
     
    
+    @IBOutlet weak var bannerView: GADBannerView!
     var weaponCollection = [Weapon]()
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let adRequest = GADRequest()
+        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        
+        bannerView.rootViewController = self
+        bannerView.delegate = self
+        
+        bannerView.load(adRequest)
+        
         
         collectionView.dataSource = self
         collectionView.delegate = self

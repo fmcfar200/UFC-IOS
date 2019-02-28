@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
-class LeaderboardViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class LeaderboardViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, GADBannerViewDelegate, GADInterstitialDelegate {
     
     
     struct LeaderboardResponse: Decodable {
@@ -34,11 +35,30 @@ class LeaderboardViewController: UIViewController, UITableViewDelegate, UITableV
     var selectedPlatform = ""
     
     @IBOutlet weak var headerLabel: UILabel!
-    
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var bannerView: GADBannerView!
+    var interstitial: GADInterstitial!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationItem.hidesBackButton = true
+        let newBackButton = UIBarButtonItem(title: "Back", style: UIBarButtonItem.Style.done, target: self, action: #selector(LeaderboardViewController.back(sender:)))
+        self.navigationItem.leftBarButtonItem = newBackButton
+        
+        let adRequest = GADRequest()
+        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        
+        bannerView.rootViewController = self
+        bannerView.delegate = self
+        
+        bannerView.load(adRequest)
+        
+        interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
+        let request = GADRequest()
+        interstitial.load(request)
+        
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -192,6 +212,19 @@ class LeaderboardViewController: UIViewController, UITableViewDelegate, UITableV
         let statsController = segue.destination as! StatsListViewController
         statsController.thePlatform = selectedPlatform
         statsController.theUsername = selectedUsername
+    }
+    
+    @objc func back(sender: UIBarButtonItem) {
+        // Perform your custom actions
+        
+        if (interstitial.isReady)
+        {
+            interstitial.present(fromRootViewController: self)
+            
+        }
+        // ...
+        // Go back to the previous ViewController
+        _ = navigationController?.popViewController(animated: true)
     }
     
 

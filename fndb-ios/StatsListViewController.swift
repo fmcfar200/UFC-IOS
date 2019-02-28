@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
-class StatsListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class StatsListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, GADBannerViewDelegate {
 
     struct Stat{
         var key: String!
@@ -17,6 +18,7 @@ class StatsListViewController: UIViewController, UITableViewDataSource, UITableV
     
     var statArray = [Stat]()
 
+    @IBOutlet weak var bannerView: GADBannerView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var winsLabel: UILabel!
     @IBOutlet weak var killsLabel: UILabel!
@@ -37,6 +39,15 @@ class StatsListViewController: UIViewController, UITableViewDataSource, UITableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let adRequest = GADRequest()
+        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        
+        bannerView.rootViewController = self
+        bannerView.delegate = self
+        
+        bannerView.load(adRequest)
+        
         
         tableView.delegate = self
         tableView.dataSource = self

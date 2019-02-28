@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
-class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, GADBannerViewDelegate {
     
     
     
@@ -22,6 +23,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     }
 
+    @IBOutlet weak var bannerView: GADBannerView!
     @IBOutlet weak var skinButton: UIView!
     @IBOutlet weak var statsButton: UIView!
     @IBOutlet weak var weaponsButton: UIView!
@@ -39,6 +41,14 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        let adRequest = GADRequest()
+        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        
+        bannerView.rootViewController = self
+        bannerView.delegate = self
+        
+        bannerView.load(adRequest)
         
         collectionView.dataSource=self
         collectionView.delegate=self

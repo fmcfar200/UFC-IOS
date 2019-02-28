@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 struct NewsResponse: Decodable{
     let type: String?
@@ -14,16 +15,26 @@ struct NewsResponse: Decodable{
     let entries: [News]
 }
 
-class NewsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class NewsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, GADBannerViewDelegate {
     
     
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var bannerView: GADBannerView!
     
     var newsCollection = [News]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let adRequest = GADRequest()
+        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        
+        bannerView.rootViewController = self
+        bannerView.delegate = self
+        
+        bannerView.load(adRequest)
+        
         
         tableView.delegate = self
         tableView.dataSource = self
