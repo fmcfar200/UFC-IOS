@@ -17,6 +17,12 @@ class StatsListViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     var statArray = [Stat]()
+    
+    @IBOutlet weak var lifeTimeButton: UIButton!
+    @IBOutlet weak var soloButton: UIButton!
+    @IBOutlet weak var duoButton: UIButton!
+    @IBOutlet weak var squadButton: UIButton!
+    
 
     @IBOutlet weak var bannerView: GADBannerView!
     @IBOutlet weak var tableView: UITableView!
@@ -55,6 +61,20 @@ class StatsListViewController: UIViewController, UITableViewDataSource, UITableV
         
         
         getStats(username: theUsername, type: theType, platform: thePlatform)
+        
+        switch theType {
+        case "lifeTimeStats":
+            lifeTimeButton.backgroundColor = UIColor(red:0.00, green:0.41, blue:0.75, alpha:1.0)
+        case "p2":
+            soloButton.backgroundColor = UIColor(red:0.00, green:0.41, blue:0.75, alpha:1.0)
+        case "p10":
+            duoButton.backgroundColor = UIColor(red:0.00, green:0.41, blue:0.75, alpha:1.0)
+        case "p9":
+            squadButton.backgroundColor = UIColor(red:0.00, green:0.41, blue:0.75, alpha:1.0)
+            
+        default:
+            lifeTimeButton.backgroundColor = UIColor(red:0.00, green:0.41, blue:0.75, alpha:1.0)
+        }
 
         self.navigationItem.title = theUsername
         // Do any additional setup after loading the view.
@@ -220,6 +240,8 @@ class StatsListViewController: UIViewController, UITableViewDataSource, UITableV
     
     @IBAction func typeButtonPress(_ sender: UIButton) {
         let tag = sender.tag
+        unselectButtonsTypes()
+        sender.backgroundColor = UIColor(red:0.00, green:0.41, blue:0.75, alpha:1.0)
             switch tag {
             case 0:
                 theType = "lifeTimeStats"
@@ -236,6 +258,16 @@ class StatsListViewController: UIViewController, UITableViewDataSource, UITableV
             
             
         }
+    
+    func unselectButtonsTypes()
+    {
+        lifeTimeButton.backgroundColor = UIColor( red:0.49, green:0.59, blue:0.74, alpha:1.0)
+        soloButton.backgroundColor = UIColor( red:0.49, green:0.59, blue:0.74, alpha:1.0)
+        duoButton.backgroundColor = UIColor( red:0.49, green:0.59, blue:0.74, alpha:1.0)
+        squadButton.backgroundColor = UIColor( red:0.49, green:0.59, blue:0.74, alpha:1.0)
+        
+        
+    }
     
     func showalertNotFound(title:String, message:String)
     {

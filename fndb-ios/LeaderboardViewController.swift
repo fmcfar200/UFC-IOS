@@ -19,6 +19,10 @@ class LeaderboardViewController: UIViewController, UITableViewDelegate, UITableV
     
 
     
+    @IBOutlet weak var killsButton: UIButton!
+    @IBOutlet weak var winsButton: UIButton!
+    @IBOutlet weak var scoreButton: UIButton!
+    @IBOutlet weak var minutesButton: UIButton!
     
     var leaderboardCollectionKills = [Leaderboard]()
     var leaderboardCollectionWins = [Leaderboard]()
@@ -65,14 +69,28 @@ class LeaderboardViewController: UIViewController, UITableViewDelegate, UITableV
         tableView.delegate = self
         tableView.dataSource = self
         
+         killsButton.backgroundColor = UIColor(red:0.00, green:0.41, blue:0.75, alpha:1.0)
         getTop10(type: killsSearch)
+        
 
         
         // Do any additional setup after loading the view.
     }
     
+    func unselectButtonsTypes()
+    {
+        killsButton.backgroundColor = UIColor( red:0.49, green:0.59, blue:0.74, alpha:1.0)
+        winsButton.backgroundColor = UIColor( red:0.49, green:0.59, blue:0.74, alpha:1.0)
+        scoreButton.backgroundColor = UIColor( red:0.49, green:0.59, blue:0.74, alpha:1.0)
+        minutesButton.backgroundColor = UIColor( red:0.49, green:0.59, blue:0.74, alpha:1.0)
+        
+        
+    }
+    
     @IBAction func buttonTouch(_ sender: UIButton) {
         let tag = sender.tag
+        unselectButtonsTypes()
+        sender.backgroundColor = UIColor(red:0.00, green:0.41, blue:0.75, alpha:1.0)
         switch tag {
         case 0:
             print("Kills")
