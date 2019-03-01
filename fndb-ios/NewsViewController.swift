@@ -21,6 +21,8 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var bannerView: GADBannerView!
+    var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
+
     
     var newsCollection = [News]()
     
@@ -40,7 +42,7 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.dataSource = self
         
         
-        
+        startIndicator(indicator: activityIndicator)
         let key = String("a4587bc8429ba5f7e2be4d869fddf5ff")
         let url = URL(string: "https://fortnite-public-api.theapinetwork.com/prod09/br_motd/get")!
         var request = URLRequest(url: url)
@@ -65,6 +67,7 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
                     self.newsCollection = newsResponse.entries
                     DispatchQueue.main.async {
                         self.tableView.reloadData()
+                        self.endIndicator(indicator: self.activityIndicator)
                     }
 
                     
@@ -118,5 +121,23 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func startIndicator(indicator: UIActivityIndicatorView)
+    {
+        indicator.center = self.view.center
+        indicator.hidesWhenStopped = true
+        indicator.style = UIActivityIndicatorView.Style.gray
+        view.addSubview(indicator)
+        
+        indicator.startAnimating()
+        UIApplication.shared.beginIgnoringInteractionEvents()
+        
+    }
+    
+    func endIndicator(indicator: UIActivityIndicatorView)
+    {
+        indicator.stopAnimating()
+        UIApplication.shared.endIgnoringInteractionEvents()
+    }
 
 }

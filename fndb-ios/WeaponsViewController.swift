@@ -18,7 +18,8 @@ struct WeaponsResponse:Decodable{
 
 class WeaponsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, GADBannerViewDelegate {
     
-   
+    var activityIndicator:UIActivityIndicatorView = UIActivityIndicatorView()
+    
     @IBOutlet weak var bannerView: GADBannerView!
     var weaponCollection = [Weapon]()
     @IBOutlet weak var collectionView: UICollectionView!
@@ -45,7 +46,7 @@ class WeaponsViewController: UIViewController, UICollectionViewDelegate, UIColle
         var request = URLRequest(url: url)
         request.setValue(key, forHTTPHeaderField: "Authorization")
         request.httpMethod = "POST"
-        
+        self.startIndicator(indicator: activityIndicator)
         DispatchQueue.global(qos: .userInteractive).async {
             let task = URLSession.shared.dataTask(with: request) { data, response, error in
                 guard let data = data, error == nil else {                                                 // check for fundamental networking error
@@ -66,7 +67,7 @@ class WeaponsViewController: UIViewController, UICollectionViewDelegate, UIColle
                     
                     DispatchQueue.main.async {
                         self.collectionView.reloadData()
-                       
+                        self.endIndicator(indicator: self.activityIndicator)
                     }
                     
                     
@@ -152,5 +153,23 @@ class WeaponsViewController: UIViewController, UICollectionViewDelegate, UIColle
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func startIndicator(indicator: UIActivityIndicatorView)
+    {
+        indicator.center = self.view.center
+        indicator.hidesWhenStopped = true
+        indicator.style = UIActivityIndicatorView.Style.gray
+        view.addSubview(indicator)
+        
+        indicator.startAnimating()
+        UIApplication.shared.beginIgnoringInteractionEvents()
+        
+    }
+    
+    func endIndicator(indicator: UIActivityIndicatorView)
+    {
+        indicator.stopAnimating()
+        UIApplication.shared.endIgnoringInteractionEvents()
+    }
 
 }

@@ -38,6 +38,8 @@ class LeaderboardViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var bannerView: GADBannerView!
     var interstitial: GADInterstitial!
+    var activityIndicator:UIActivityIndicatorView = UIActivityIndicatorView()
+    
 
     
     override func viewDidLoad() {
@@ -110,6 +112,7 @@ class LeaderboardViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func getTop10(type:String){
+        startIndicator(indicator: activityIndicator)
         let key = String("a4587bc8429ba5f7e2be4d869fddf5ff")
         let url = URL(string: "https://fortnite-public-api.theapinetwork.com/prod09/leaderboards/get?window=top_10_"+type)!
         var request = URLRequest(url: url)
@@ -139,6 +142,7 @@ class LeaderboardViewController: UIViewController, UITableViewDelegate, UITableV
                     
                     DispatchQueue.main.async {
                         self.tableView.reloadData()
+                        self.endIndicator(indicator: self.activityIndicator)
                     }
                     
                     
@@ -237,5 +241,23 @@ class LeaderboardViewController: UIViewController, UITableViewDelegate, UITableV
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func startIndicator(indicator: UIActivityIndicatorView)
+    {
+        indicator.center = self.view.center
+        indicator.hidesWhenStopped = true
+        indicator.style = UIActivityIndicatorView.Style.gray
+        view.addSubview(indicator)
+        
+        indicator.startAnimating()
+        UIApplication.shared.beginIgnoringInteractionEvents()
+        
+    }
+    
+    func endIndicator(indicator: UIActivityIndicatorView)
+    {
+        indicator.stopAnimating()
+        UIApplication.shared.endIgnoringInteractionEvents()
+    }
 
 }

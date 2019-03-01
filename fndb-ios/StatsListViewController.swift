@@ -23,6 +23,7 @@ class StatsListViewController: UIViewController, UITableViewDataSource, UITableV
     @IBOutlet weak var winsLabel: UILabel!
     @IBOutlet weak var killsLabel: UILabel!
     @IBOutlet weak var matchesLabel: UILabel!
+    var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
     
     
     var killsString:String = ""
@@ -78,6 +79,7 @@ class StatsListViewController: UIViewController, UITableViewDataSource, UITableV
     
     func getStats(username:String, type:String, platform:String){
         
+        startIndicator(indicator: activityIndicator)
         statArray.removeAll()
         tableView.reloadData()
         
@@ -195,7 +197,8 @@ class StatsListViewController: UIViewController, UITableViewDataSource, UITableV
                         self.winsLabel.text = self.winsString
                         self.killsLabel.text = self.killsString
                         self.matchesLabel.text = self.matchesString
-
+                        
+                        self.endIndicator(indicator: self.activityIndicator)
 
                         
                                             }
@@ -267,6 +270,22 @@ class StatsListViewController: UIViewController, UITableViewDataSource, UITableV
         // Pass the selected object to the new view controller.
     }
     */
-
+    func startIndicator(indicator: UIActivityIndicatorView)
+    {
+        indicator.center = self.view.center
+        indicator.hidesWhenStopped = true
+        indicator.style = UIActivityIndicatorView.Style.gray
+        view.addSubview(indicator)
+        
+        indicator.startAnimating()
+        UIApplication.shared.beginIgnoringInteractionEvents()
+        
+    }
+    
+    func endIndicator(indicator: UIActivityIndicatorView)
+    {
+        indicator.stopAnimating()
+        UIApplication.shared.endIgnoringInteractionEvents()
+    }
 }
 

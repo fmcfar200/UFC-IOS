@@ -34,6 +34,8 @@ class ChallengeViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var bannerView: GADBannerView!
     var challengeCollection = [Challenge]()
+    var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -49,6 +51,7 @@ class ChallengeViewController: UIViewController, UITableViewDelegate, UITableVie
         tableView.delegate = self
         tableView.dataSource = self
         
+        startIndicator(indicator: activityIndicator)
         let key = String("a4587bc8429ba5f7e2be4d869fddf5ff")
         let url = URL(string: "https://fortnite-public-api.theapinetwork.com/prod09/challenges/get?season=current")!
         var request = URLRequest(url: url)
@@ -87,6 +90,7 @@ class ChallengeViewController: UIViewController, UITableViewDelegate, UITableVie
                     
                     DispatchQueue.main.async {
                         self.tableView.reloadData()
+                        self.endIndicator(indicator: self.activityIndicator)
                     }
                     
                     
@@ -130,5 +134,22 @@ class ChallengeViewController: UIViewController, UITableViewDelegate, UITableVie
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    func startIndicator(indicator: UIActivityIndicatorView)
+    {
+        indicator.center = self.view.center
+        indicator.hidesWhenStopped = true
+        indicator.style = UIActivityIndicatorView.Style.gray
+        view.addSubview(indicator)
+        
+        indicator.startAnimating()
+        UIApplication.shared.beginIgnoringInteractionEvents()
+        
+    }
+    
+    func endIndicator(indicator: UIActivityIndicatorView)
+    {
+        indicator.stopAnimating()
+        UIApplication.shared.endIgnoringInteractionEvents()
+    }
 }
