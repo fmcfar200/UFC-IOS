@@ -25,8 +25,8 @@
 		4C9AC2002176F65D00C9D03C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C9AC1FF2176F65D00C9D03C /* Assets.xcassets */; };
 		4C9AC2032176F65D00C9D03C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C9AC2012176F65D00C9D03C /* LaunchScreen.storyboard */; };
 		4C9AC20F2176FE4000C9D03C /* LuckiestGuy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4C9AC20E2176FE4000C9D03C /* LuckiestGuy.ttf */; };
+		4CA01C4B222979F100C4BA1B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4CA01C4A222979F000C4BA1B /* GoogleService-Info.plist */; };
 		4CA5E39B2227318800D1B57F /* StatsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA5E39A2227318800D1B57F /* StatsListViewController.swift */; };
-		4CA70D332177CBC00044C4F3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4CA70D322177CBC00044C4F3 /* GoogleService-Info.plist */; };
 		4CB3D556218B7C9E00F4A045 /* StatsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB3D555218B7C9E00F4A045 /* StatsTableViewCell.swift */; };
 		4CC83FC22225948E00801B4E /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC83FC12225948E00801B4E /* PopUpViewController.swift */; };
 		4CEC5B6F21787EDC00B74866 /* Skin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEC5B6E21787EDC00B74866 /* Skin.swift */; };
@@ -64,8 +64,8 @@
 		4C9AC2022176F65D00C9D03C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4C9AC2042176F65D00C9D03C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C9AC20E2176FE4000C9D03C /* LuckiestGuy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = LuckiestGuy.ttf; path = "../../../Downloads/luckiest-guy/LuckiestGuy.ttf"; sourceTree = "<group>"; };
+		4CA01C4A222979F000C4BA1B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4CA5E39A2227318800D1B57F /* StatsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsListViewController.swift; sourceTree = "<group>"; };
-		4CA70D322177CBC00044C4F3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		4CAF21102228B34900CD932E /* fndb-ios.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "fndb-ios.entitlements"; sourceTree = "<group>"; };
 		4CB3D555218B7C9E00F4A045 /* StatsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsTableViewCell.swift; sourceTree = "<group>"; };
 		4CC83FC12225948E00801B4E /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
@@ -127,7 +127,7 @@
 				4CF79F00217A7C7F00C9A5C5 /* View */,
 				4CF79EFF217A7C6300C9A5C5 /* Model */,
 				4C9AC2042176F65D00C9D03C /* Info.plist */,
-				4CA70D322177CBC00044C4F3 /* GoogleService-Info.plist */,
+				4CA01C4A222979F000C4BA1B /* GoogleService-Info.plist */,
 				4C9AC20E2176FE4000C9D03C /* LuckiestGuy.ttf */,
 			);
 			path = "fndb-ios";
@@ -268,9 +268,9 @@
 			files = (
 				4C9AC20F2176FE4000C9D03C /* LuckiestGuy.ttf in Resources */,
 				4C9AC2032176F65D00C9D03C /* LaunchScreen.storyboard in Resources */,
-				4CA70D332177CBC00044C4F3 /* GoogleService-Info.plist in Resources */,
 				4C9AC2002176F65D00C9D03C /* Assets.xcassets in Resources */,
 				4C9AC1FE2176F65B00C9D03C /* Main.storyboard in Resources */,
+				4CA01C4B222979F100C4BA1B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
