@@ -50,14 +50,14 @@ class LeaderboardViewController: UIViewController, UITableViewDelegate, UITableV
         self.navigationItem.leftBarButtonItem = newBackButton
         
         let adRequest = GADRequest()
-        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        bannerView.adUnitID = "ca-app-pub-5483417401365103/4780215825"
         
         bannerView.rootViewController = self
         bannerView.delegate = self
         
         bannerView.load(adRequest)
         
-        interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
+        interstitial = GADInterstitial(adUnitID: "ca-app-pub-5483417401365103/5901725806")
         let request = GADRequest()
         interstitial.load(request)
         

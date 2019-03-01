@@ -38,7 +38,7 @@ class SkinSelectHomeController: UIViewController, GADInterstitialDelegate, GADBa
         self.navigationItem.leftBarButtonItem = newBackButton
         
         let adRequest = GADRequest()
-        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        bannerView.adUnitID = "ca-app-pub-5483417401365103/2600651331"
         
         bannerView.rootViewController = self
         bannerView.delegate = self
@@ -46,7 +46,7 @@ class SkinSelectHomeController: UIViewController, GADInterstitialDelegate, GADBa
         bannerView.load(adRequest)
         
         
-        interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
+        interstitial = GADInterstitial(adUnitID: "ca-app-pub-5483417401365103/2345624173")
         let request = GADRequest()
         interstitial.load(request)
         

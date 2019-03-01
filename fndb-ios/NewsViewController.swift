@@ -30,7 +30,7 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
         
         let adRequest = GADRequest()
-        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        bannerView.adUnitID = "ca-app-pub-5483417401365103/1579337416"
         
         bannerView.rootViewController = self
         bannerView.delegate = self
