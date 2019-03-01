@@ -66,6 +66,7 @@
 		4C9AC20E2176FE4000C9D03C /* LuckiestGuy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = LuckiestGuy.ttf; path = "../../../Downloads/luckiest-guy/LuckiestGuy.ttf"; sourceTree = "<group>"; };
 		4CA5E39A2227318800D1B57F /* StatsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsListViewController.swift; sourceTree = "<group>"; };
 		4CA70D322177CBC00044C4F3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		4CAF21102228B34900CD932E /* fndb-ios.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "fndb-ios.entitlements"; sourceTree = "<group>"; };
 		4CB3D555218B7C9E00F4A045 /* StatsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsTableViewCell.swift; sourceTree = "<group>"; };
 		4CC83FC12225948E00801B4E /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 		4CEC5B6E21787EDC00B74866 /* Skin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skin.swift; sourceTree = "<group>"; };
@@ -117,6 +118,7 @@
 		4C9AC1F72176F65B00C9D03C /* fndb-ios */ = {
 			isa = PBXGroup;
 			children = (
+				4CAF21102228B34900CD932E /* fndb-ios.entitlements */,
 				4C9AC1F82176F65B00C9D03C /* AppDelegate.swift */,
 				4C9AC1FF2176F65D00C9D03C /* Assets.xcassets */,
 				4C9AC2012176F65D00C9D03C /* LaunchScreen.storyboard */,
@@ -232,6 +234,9 @@
 						CreatedOnToolsVersion = 10.0;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
 								enabled = 1;
 							};
 						};
@@ -503,6 +508,7 @@
 			baseConfigurationReference = 8CB15914473BCCC4D09E974C /* Pods-fndb-ios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "fndb-ios/fndb-ios.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P64JRJ974Z;
 				INFOPLIST_FILE = "fndb-ios/Info.plist";
@@ -523,6 +529,7 @@
 			baseConfigurationReference = 8DB6DAFA9540923C8BF4DA08 /* Pods-fndb-ios.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "fndb-ios/fndb-ios.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P64JRJ974Z;
 				INFOPLIST_FILE = "fndb-ios/Info.plist";
