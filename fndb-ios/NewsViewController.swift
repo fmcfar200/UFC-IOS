@@ -130,14 +130,12 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
         view.addSubview(indicator)
         
         indicator.startAnimating()
-        UIApplication.shared.beginIgnoringInteractionEvents()
         
     }
     
     func endIndicator(indicator: UIActivityIndicatorView)
     {
         indicator.stopAnimating()
-        UIApplication.shared.endIgnoringInteractionEvents()
     }
 
 }

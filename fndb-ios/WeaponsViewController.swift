@@ -162,14 +162,12 @@ class WeaponsViewController: UIViewController, UICollectionViewDelegate, UIColle
         view.addSubview(indicator)
         
         indicator.startAnimating()
-        UIApplication.shared.beginIgnoringInteractionEvents()
         
     }
     
     func endIndicator(indicator: UIActivityIndicatorView)
     {
         indicator.stopAnimating()
-        UIApplication.shared.endIgnoringInteractionEvents()
     }
 
 }

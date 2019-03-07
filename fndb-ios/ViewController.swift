@@ -8,6 +8,8 @@
 
 import UIKit
 import GoogleMobileAds
+import Firebase
+import FirebaseDatabase
 
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, GADBannerViewDelegate {
     
@@ -31,24 +33,39 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     @IBOutlet weak var challengesButton: UIView!
     @IBOutlet weak var newsButton: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var backgroundImageView: UIImageView!
     
     var searchType = SearchType.PROMO
     
     var shopCollection = [ShopItem]()
-    
+    var backgroundString = String()
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let adRequest = GADRequest()
+        let dataRef = Database.database().reference()
+        
+        dataRef.child("HomeBackground").observeSingleEvent(of: .value, with: { (snapshot) in
+            // Get user value
+            if ((snapshot.value as! String) .count != 0)
+            {
+                downloadImage(urlstr: snapshot.value as! String, imageView: self.backgroundImageView)
+
+            }
+            
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+        
+        
         bannerView.adUnitID = "ca-app-pub-5483417401365103/2721615429"
         
         bannerView.rootViewController = self
         bannerView.delegate = self
         
-        bannerView.load(adRequest)
+        bannerView.load(GADRequest())
         
         collectionView.dataSource=self
         collectionView.delegate=self

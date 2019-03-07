@@ -473,10 +473,10 @@
             </objects>
             <point key="canvasLocation" x="40.799999999999997" y="-1652.2167487684731"/>
         </scene>
-        <!--Stats Search View Controller-->
+        <!--Player Search-->
         <scene sceneID="DtR-2f-sBg">
             <objects>
-                <viewController id="4iJ-IT-YYp" customClass="StatsSearchViewController" customModule="fndb_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Player Search" id="4iJ-IT-YYp" customClass="StatsSearchViewController" customModule="fndb_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="I9d-Ml-AAW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -935,6 +935,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="gTy-yy-P1W"/>
                     <connections>
+                        <outlet property="backgroundImageView" destination="SWO-Qz-q3E" id="YsN-96-c1K"/>
                         <outlet property="bannerView" destination="N25-Ur-MUI" id="bJQ-aH-iMP"/>
                         <outlet property="collectionView" destination="TMo-uy-rav" id="L1W-pE-HzV"/>
                     </connections>
@@ -943,10 +944,10 @@
             </objects>
             <point key="canvasLocation" x="978.39999999999998" y="25.862068965517242"/>
         </scene>
-        <!--Challenge-->
+        <!--Challenges-->
         <scene sceneID="PmS-xo-XzH">
             <objects>
-                <viewController title="Challenge" id="AcW-7G-cmo" customClass="ChallengeViewController" customModule="fndb_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Challenges" id="AcW-7G-cmo" customClass="ChallengeViewController" customModule="fndb_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dJx-mp-1X0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -954,7 +955,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_original_cut" translatesAutoresizingMaskIntoConstraints="NO" id="Sl2-lH-IUz">
                                 <rect key="frame" x="0.0" y="88" width="375" height="724"/>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bu0-SJ-1OF">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bu0-SJ-1OF">
                                 <rect key="frame" x="0.0" y="88" width="375" height="636"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -971,7 +972,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Search Chests in Junk Junction" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZWH-hH-AbO">
                                                     <rect key="frame" x="15" y="19" width="345" height="20.333333333333329"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zjh-83-KET">
@@ -987,13 +988,13 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="0/10000" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nOK-cd-4nb">
                                                             <rect key="frame" x="0.0" y="11.999999999999998" width="64.666666666666671" height="20.333333333333329"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dPK-6d-Sou">
                                                             <rect key="frame" x="114.66666666666666" y="10.666666666666664" width="20" height="23"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                                            <nil key="textColor"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -1009,6 +1010,7 @@
                                                     </constraints>
                                                 </view>
                                             </subviews>
+                                            <color key="backgroundColor" red="0.0" green="0.41176470590000003" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstItem="zjh-83-KET" firstAttribute="leading" secondItem="j9X-xi-O0b" secondAttribute="leadingMargin" id="3Or-HV-Urm"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="ZWH-hH-AbO" secondAttribute="trailing" id="5J2-yC-p92"/>
@@ -1061,10 +1063,10 @@
             </objects>
             <point key="canvasLocation" x="-1072.8" y="786.20689655172418"/>
         </scene>
-        <!--Leaderboard View Controller-->
+        <!--Top 10-->
         <scene sceneID="9b8-Dx-2Mz">
             <objects>
-                <viewController id="QlG-Tc-tzb" customClass="LeaderboardViewController" customModule="fndb_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Top 10" id="QlG-Tc-tzb" customClass="LeaderboardViewController" customModule="fndb_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wOA-h7-eyJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1345,10 +1347,10 @@
             </objects>
             <point key="canvasLocation" x="1256.8" y="786.20689655172418"/>
         </scene>
-        <!--Skin Battle Pass-->
+        <!--Battle Pass-->
         <scene sceneID="9jB-dL-RSd">
             <objects>
-                <viewController title="Skin Battle Pass" id="llv-6A-Dj3" customClass="SkinSelectBPViewController" customModule="fndb_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Battle Pass" id="llv-6A-Dj3" customClass="SkinSelectBPViewController" customModule="fndb_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EBU-q9-l93">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1848,10 +1850,10 @@
             </objects>
             <point key="canvasLocation" x="3576.8000000000002" y="26.53673163418291"/>
         </scene>
-        <!--Skin Item Store-->
+        <!--Item Store-->
         <scene sceneID="ep3-DN-VsM">
             <objects>
-                <viewController title="Skin Item Store" id="ySx-C3-cEN" customClass="SkinSelectShopViewController" customModule="fndb_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Item Store" id="ySx-C3-cEN" customClass="SkinSelectShopViewController" customModule="fndb_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IJm-y5-Mvo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

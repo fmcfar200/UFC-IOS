@@ -40,7 +40,7 @@ class StatsListViewController: UIViewController, UITableViewDataSource, UITableV
     
     
     var thePlatform:String = "pc"
-    var theType:String = "p2"
+    var theType:String = "lifeTimeStats"
     var theUsername:String = ""
     var searched:Bool = false
     
@@ -252,7 +252,7 @@ class StatsListViewController: UIViewController, UITableViewDataSource, UITableV
             case 3:
                 theType = "p9"
             default:
-                theType = "p2"
+                theType = "lifeTimeStats"
             }
             getStats(username: theUsername, type: theType, platform: thePlatform)
             
@@ -310,14 +310,12 @@ class StatsListViewController: UIViewController, UITableViewDataSource, UITableV
         view.addSubview(indicator)
         
         indicator.startAnimating()
-        UIApplication.shared.beginIgnoringInteractionEvents()
         
     }
     
     func endIndicator(indicator: UIActivityIndicatorView)
     {
         indicator.stopAnimating()
-        UIApplication.shared.endIgnoringInteractionEvents()
     }
 }
 
