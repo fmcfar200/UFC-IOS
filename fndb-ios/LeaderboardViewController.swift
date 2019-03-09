@@ -69,8 +69,9 @@ class LeaderboardViewController: UIViewController, UITableViewDelegate, UITableV
         tableView.delegate = self
         tableView.dataSource = self
         
-         killsButton.backgroundColor = UIColor(red:0.00, green:0.41, blue:0.75, alpha:1.0)
-        getTop10(type: killsSearch)
+        killsButton.backgroundColor = UIColor(red:0.00, green:0.41, blue:0.75, alpha:1.0)
+        theSearch = killsSearch
+        getTop10(type: theSearch)
         
 
         
